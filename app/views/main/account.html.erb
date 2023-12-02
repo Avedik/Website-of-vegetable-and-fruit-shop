@@ -1,0 +1,707 @@
+<!doctype html>
+<html class="no-js" lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Аккаунт || Грядка</title>
+    <meta name="description" content="Default Description">
+    <meta name="keywords" content="E-commerce" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- place favicon.ico in the root directory -->
+    <link rel="shortcut icon" type="image/x-icon" href="../../assets/img/icon/favicon.png">
+    <!-- Google Font css -->
+    <link href="https://fonts.googleapis.com/css?family=Lily+Script+One" rel="stylesheet"> 
+
+      <!-- mobile menu css -->
+        <%= stylesheet_link_tag 'meanmenu.min.css' %>
+        <!-- animate css -->
+        <%= stylesheet_link_tag 'animate.css' %>
+        <!-- nivo slider css -->
+        <%= stylesheet_link_tag 'nivo-slider.css' %>
+        <!-- owl carousel css -->
+        <%= stylesheet_link_tag 'owl.carousel.min.css' %>
+        <!-- slick css -->
+        <%= stylesheet_link_tag 'slick.css' %>
+        <!-- price slider css -->
+        <%= stylesheet_link_tag 'jquery-ui.min.css' %>
+        <!-- fontawesome css -->
+        <%= stylesheet_link_tag 'font-awesome.min.css' %>
+        <!-- fancybox css -->
+        <%= stylesheet_link_tag 'jquery.fancybox.css' %>     
+        <!-- bootstrap css -->
+        <%= stylesheet_link_tag 'bootstrap.min.css' %>
+        <!-- default css  -->
+        <%= stylesheet_link_tag 'default.css' %>
+        <!-- style css -->
+        <%= stylesheet_link_tag 'style.css' %>
+        <!-- responsive css -->
+        <%= stylesheet_link_tag 'responsive.css' %>
+
+        <!-- modernizr js -->
+          <%= javascript_include_tag('vendor/modernizr-2.8.3.min.js') %>
+</head>
+
+<body>
+    <!-- Wrapper Start -->
+    <div class="wrapper">
+        <!-- Header Area Start -->
+          <header>
+              <!-- Header Top Start -->
+              <div class="header-top">
+                  <div class="container">
+                      <div class="row">
+                          <!-- Header Top left Start -->                        
+                          <div class="col-lg-4 col-md-12 d-center">
+                              <div class="header-top-left">
+                                  <%= image_tag "icon/call.png" %>Позвоните нам: +79094191479
+                              </div>                        
+                          </div>
+                          <!-- Header Top left End -->
+                          <!-- Search Box Start -->                                        
+                          <div class="col-lg-4 col-md-6 ml-auto mr-auto">
+                              <div class="search-box-view">
+                                  <form action="#">
+                                      <input type="text" class="email" placeholder="Поиск продукта" name="product">
+                                      <button type="submit" class="submit"></button>
+                                  </form>
+                              </div>                                           
+                          </div>
+                          <!-- Search Box End --> 
+                          <!-- Header Top Right Start -->                                       
+                          <div class="col-lg-4 col-md-12">
+                              <div class="header-top-right">
+                                  <ul class="header-list-menu f-right">
+                                      <!-- Language Start -->
+                                      <li><a href="#">Язык: Русский <i class="fa fa-angle-down"></i></a>
+                                          <ul class="ht-dropdown">
+                                              <li><a href="#">English</a></li>
+                                          </ul>
+                                      </li>
+                                      <!-- Language End -->                                
+                                      <!-- Currency Start -->
+                                      <li><a href="#">Валюта:  RUB <i class="fa fa-angle-down"></i></a>
+                                          <ul class="ht-dropdown">
+                                              <li><a href="#">USD</a></li>
+                                          </ul>
+                                      </li>
+                                      <!-- Currency End -->
+                                  </ul>
+                                  <!-- Header-list-menu End -->
+                              </div>
+                          </div>
+                          <!-- Header Top Right End -->
+                      </div>
+                  </div>
+                  <!-- Container End -->
+              </div>
+              <!-- Header Top End -->
+              <!-- Header Bottom Start -->
+              <div class="header-bottom header-sticky">
+                  <div class="container">
+                      <div class="row">
+                          <div class="col-xl-3 col-lg-2 col-sm-5 col-5">
+                              <div class="logo">
+                                  <a href="index.html"><%= image_tag "logo/logo.png" %></a>
+                              </div>
+                          </div>
+                          <!-- Primary Vertical-Menu End -->
+                          <!-- Search Box Start -->
+                          <div class="col-xl-6 col-lg-7 d-none d-lg-block">
+                              <div class="middle-menu pull-right">
+                                  <nav>
+                                      <ul class="middle-menu-list">
+
+                                          <li><a href="about.html">О нас</a></li>                                        
+                                          <li><a href="shop.html">Магазин<i class="fa fa-angle-down"></i></a>
+                                              <!-- Home Version Dropdown Start -->
+                                              <ul class="ht-dropdown dropdown-style-two">
+                                                  <li><a href="shop.html">Магазин</a>
+                                                      <!-- Start Two Step -->
+                                                      <ul class="ht-dropdown dropdown-style-two sub-menu">
+                                                          <li><a href="shop.html">Название категории продуктов</a>
+                                                              <!-- Start Three Step -->
+                                                              <ul class="ht-dropdown dropdown-style-two sub-menu">
+                                                                  <li><a href="shop.html">Название категории продуктов</a></li>
+                                                                  <li><a href="shop.html">Название категории продуктов</a></li>
+                                                                  <li><a href="shop.html">Название категории продуктов</a></li>
+                                                              </ul>
+                                                          </li>
+                                                          <li><a href="shop.html">Название категории продуктов</a></li>
+                                                          <li><a href="shop.html">Название категории продуктов</a></li>
+                                                      </ul>
+                                                  </li>
+                                                  <li><a href="product.html">Страница с информацией о продукте</a></li>
+                                                  <li><a href="compare.html">Страница сравнения</a></li>
+                                                  <li><a href="cart.html">Корзина</a></li>
+                                                  <li><a href="checkout.html">Страница проверки</a></li>
+                                                  <li><a href="wishlist.html">Избранное</a></li>
+                                              </ul>
+                                              <!-- Home Version Dropdown End -->
+                                          </li>                                        
+                                          <li><a href="blog.html">Блог<i class="fa fa-angle-down"></i></a>
+                                              <!-- Home Version Dropdown Start -->
+                                              <ul class="ht-dropdown dropdown-style-two">
+                                                  <li><a href="blog.html">Страница блога</a></li>
+                                                  <li><a href="blog-details.html">Материал блога</a></li>
+                                              </ul>
+                                              <!-- Home Version Dropdown End -->
+
+
+                                       </li>
+                                          <li><a href="#">страницы<i class="fa fa-angle-down"></i></a>
+                                              <!-- Home Version Dropdown Start -->
+                                              <ul class="ht-dropdown dropdown-style-two">
+                                                  <li><a href="login.html">Войти</a></li>
+                                                  <li><a href="register.html">Зарегистрироваться</a></li>
+                                                  
+                                                  <li><a href="forgot-password.html">Забыли пароль?</a></li>
+                                                  <li><a href="account.html">Профиль</a></li>
+                                              </ul>
+                                              <!-- Home Version Dropdown End -->
+                                          </li>
+                                          <li><a href="contact.html">Связаться с нами</a></li>                                        
+                                      </ul>
+                                  </nav>
+                              </div>
+                          </div>
+                          <!-- Search Box End -->
+                          <!-- Cartt Box Start -->
+                          <div class="col-lg-3 col-sm-7 col-7">
+                              <div class="cart-box text-right">
+                                  <ul>
+                                      <li><a href="compare.html"><i class="fa fa-cog"></i></a>
+                                          <ul class="ht-dropdown">
+                                              <li><a href="login.html">Войти</a></li>
+                                              <li><a href="register.html">Зарегистрироваться</a></li>
+                                              <li><a href="account.html">Профиль</a></li>                                            
+                                          </ul>
+                                      </li>                                    
+                                      <li><a href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
+                                      <li><a href="#"><i class="fa fa-shopping-basket"></i><span class="cart-counter">2</span></a>
+                                          <ul class="ht-dropdown main-cart-box">
+                                              <li>
+                                                  <!-- Cart Box Start -->
+                                                  <div class="single-cart-box">
+                                                      <div class="cart-img">
+                                                          <a href="#"><%= image_tag "menu/1.jpg" %></a>
+                                                      </div>
+                                                      <div class="cart-content">
+                                                          <h6><a href="product.html">Названия продуктов</a></h6>
+                                                          <span>1 × 399.00 руб.</span>
+                                                      </div>
+                                                      <a class="del-icone" href="#"><i class="fa fa-window-close-o"></i></a>
+                                                  </div>
+                                                  <!-- Cart Box End -->
+                                                  <!-- Cart Box Start -->
+                                                  <div class="single-cart-box">
+                                                      <div class="cart-img">
+                                                          <a href="#"><%= image_tag "menu/2.jpg" %></a>
+                                                      </div>
+                                                      <div class="cart-content">
+                                                          <h6><a href="product.html">Названия продуктов</a></h6>
+                                                          <span>2 × 299.00 руб.</span>
+                                                      </div>
+                                                      <a class="del-icone" href="#"><i class="fa fa-window-close-o"></i></a>
+                                                  </div>
+                                                  <!-- Cart Box End -->
+                                                  <!-- Cart Footer Inner Start -->
+                                                  <div class="cart-footer fix">
+                                                      <h5>Итого :<span class="f-right">698.00 руб.</span></h5>
+                                                      <div class="cart-actions">
+                                                          <a class="checkout" href="checkout.html">Проверить</a>
+                                                      </div>
+                                                  </div>
+                                                  <!-- Cart Footer Inner End -->
+                                              </li>
+                                          </ul>
+                                      </li>
+                                  </ul>
+                              </div>
+                          </div>
+                          <!-- Cartt Box End -->
+                          <div class="col-sm-12 d-lg-none">
+                              <div class="mobile-menu">
+                                  <nav>
+                                      <ul>
+
+                                          <li><a href="shop.html">сделать покупку</a>
+                                              <!-- Mobile Menu Dropdown Start -->
+                                              <ul>
+                                                  <li><a href="product.html">Магазин</a>
+                                                      <ul>
+                                                          <li><a href="shop.html">Название категории продуктов</a>
+                                                              <!-- Start Three Step -->
+                                                              <ul>
+                                                                  <li><a href="shop.html">Название категории продуктов</a></li>
+                                                                  <li><a href="shop.html">Название категории продуктов</a></li>
+                                                                  <li><a href="shop.html">Название категории продуктов</a></li>
+                                                              </ul>
+                                                          </li>
+                                                          <li><a href="shop.html">Название категории продуктов</a></li>
+                                                          <li><a href="shop.html">Название категории продуктов</a></li>
+                                                      </ul>
+                                                  </li>
+                                                  <li><a href="product.html">Страница с информацией о продукте</a></li>
+                                                  <li><a href="compare.html">Страница сравнения</a></li>
+                                                  <li><a href="cart.html">Корзина</a></li>
+                                                  <li><a href="checkout.html">Страница проверки</a></li>
+                                                  <li><a href="wishlist.html">Избранное</a></li>
+                                              </ul>
+                                              <!-- Mobile Menu Dropdown End -->
+                                          </li>
+                                          <li><a href="blog.html">Блог</a>
+                                              <!-- Mobile Menu Dropdown Start -->
+                                              <ul>
+                                                  <li><a href="blog-details.html">Страница с материалом блога</a></li>
+                                              </ul>
+                                              <!-- Mobile Menu Dropdown End -->
+                                          </li>
+                                          <li><a href="#">страницы</a>
+                                              <!-- Mobile Menu Dropdown Start -->
+                                              <ul>
+                                                  <li><a href="login.html">Войти</a></li>
+                                                  <li><a href="register.html">Зарегистрироваться</a></li>
+                                                 
+                                              </ul>
+                                              <!-- Mobile Menu Dropdown End -->
+                                          </li>
+                                          <li><a href="about.html">О нас</a></li>
+                                          <li><a href="contact.html">Связаться с нами</a></li>
+                                      </ul>
+                                  </nav>
+                              </div>
+                          </div>
+                          <!-- Mobile Menu  End -->                        
+                      </div>
+                      <!-- Row End -->
+                  </div>
+                  <!-- Container
+
+        End -->
+              </div>
+              <!-- Header Bottom End -->
+          </header>
+          <!-- Header Area End --> 
+        <!-- Breadcrumb Start -->
+        <div class="breadcrumb-area ptb-60 ptb-sm-30">
+            <div class="container">
+                <div class="breadcrumb">
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li class="active"><a href="account.html">Аккаунт</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Container End -->
+        </div>
+        <!-- Breadcrumb End -->
+        <!-- My Account Page Start Here -->
+        <div class="my-account white-bg pb-60">
+            <div class="container">
+                <div class="account-dashboard">
+                   <div class="dashboard-upper-info">
+                       <div class="row no-gutters align-items-center">
+                           <div class="col-lg-3 col-md-6">
+                               <div class="d-single-info">
+                                   <p class="user-name">Привет <span>mail@info</span></p>
+                                   <p>(not mail@info? <a href="#">Выход</a>)</p>
+                               </div>
+                           </div>
+                           <div class="col-lg-3 col-md-6">
+                               <div class="d-single-info">
+                                   <p>Нужна консультация? Обращайтесь.</p>
+                                   <p>admin@example.com.</p>
+                               </div>
+                           </div>
+                           <div class="col-lg-3 col-md-6">
+                               <div class="d-single-info">
+                                   <p>Поддержка </p>
+                                   <p>support@example.com</p>
+                               </div>
+                           </div>
+                           <div class="col-lg-3 col-md-6">
+                               <div class="d-single-info text-center">
+                                   <a class="view-cart" href="cart.html"><i class="fa fa-cart-plus" aria-hidden="true"></i>Посмотреть корзину</a>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <!-- Nav tabs -->
+                            <ul class="nav flex-column dashboard-list" role="tablist">
+                                <li><a class="active" data-toggle="tab" href="#dashboard">Панель инструментов</a></li>
+                                <li><a data-toggle="tab" href="#orders">Заказы</a></li>
+                                <li><a data-toggle="tab" href="#downloads">Загрузки</a></li>
+                                <li><a data-toggle="tab" href="#address">Адреса</a></li>
+                                <li><a data-toggle="tab" href="#account-details">Информация аккаунта</a></li>
+                                <li><a href="login.html" href="#logout">Выйти</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-10">
+                            <!-- Tab panes -->
+                            <div class="tab-content dashboard-content mt-all-40">
+                                <div id="dashboard" class="tab-pane active">
+                                    <h3>Панель инструментов </h3>
+                                    <p>Вы можете посмотреть <a href="#">недавние заказы</a>, управлять вашей <a href="#">доставкой</a> и <a href="#">редактировать ваши данные.</a></p>
+                                </div>
+                                <div id="orders" class="tab-pane fade">
+                                    <h3>Заказы</h3>
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Заказ</th>
+                                                    <th>Дата</th>
+                                                    <th>Статус</th>
+                                                    <th>Итого</th>
+                                                    <th>Действия</th>	 	 	 	
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>Май 10, 2018</td>
+                                                    <td>Обработка</td>
+                                                    <td>25.00 руб за 1 шт </td>
+                                                    <td><a class="view" href="cart.html">view</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>Май 10, 2018</td>
+                                                    <td>Обработка</td>
+                                                    <td>17.00 руб за 1 шт </td>
+                                                    <td><a class="view" href="cart.html">view</a></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div id="downloads" class="tab-pane fade">
+                                    <h3>Загрузки</h3>
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Продукт</th>
+                                                    <th>Загрузки</th>
+                                                    <th>Срок годности</th>
+                                                    <th>Скачать</th>	 	 	 	
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Ввести название здесь</td>
+                                                    <td>Май 10, 2018</td>
+                                                    <td>никогда</td>
+                                                    <td><a class="view" href="#">Кликните, что загрузить ваш файл</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Ввести название здесь</td>
+                                                    <td>Сен 11, 2018</td>
+                                                    <td>никогда</td>
+                                                    <td><a class="view" href="#">Кликните, что загрузить ваш файл</a></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div id="address" class="tab-pane">
+                                    <p>Следующий адрес будет использоваться по умолчанию.</p>
+                                    <h4 class="billing-address">Расчётный адрес</h4>
+                                    <a class="view" href="#">редактировать</a>
+                                    <p>Иванов Иван</p>
+                                    <p>Россия</p>   
+                                </div>
+                                <div id="account-details" class="tab-pane fade">
+                                    <h3>Информация аккаунта </h3>
+                                    <div class="register-form login-form clearfix">
+                                        <form action="#">
+                                            <div class="form-group row align-items-center">
+                                                <label class="col-lg-3 col-md-4 col-form-label">Пол</label>
+                                                <div class="col-lg-6 col-md-8">
+                                                    <span class="custom-radio"><input name="id_gender" value="1" type="radio"> Мужчина</span>
+                                                    <span class="custom-radio"><input name="id_gender" value="1" type="radio"> Женщина</span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="f-name" class="col-lg-3 col-md-4 col-form-label">Имя</label>
+                                                <div class="col-lg-6 col-md-8">
+                                                    <input type="text" class="form-control" id="f-name">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="l-name" class="col-lg-3 col-md-4 col-form-label">Фамилия</label>
+
+
+                                                <div class="col-lg-6 col-md-8">
+                                                    <input type="text" class="form-control" id="l-name">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="email" class="col-lg-3 col-md-4 col-form-label">Email</label>
+                                                <div class="col-lg-6 col-md-8">
+                                                    <input type="text" class="form-control" id="email">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="inputpassword" class="col-lg-3 col-md-4 col-form-label">Текущий пароль</label>
+                                                <div class="col-lg-6 col-md-8">
+                                                    <input type="password" class="form-control" id="inputpassword">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="newpassword" class="col-lg-3 col-md-4 col-form-label">Новый пароль</label>
+                                                <div class="col-lg-6 col-md-8">
+                                                    <input type="password" class="form-control" id="newpassword">
+                                                    <button class="btn show-btn" type="button">Показать</button>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="v-password" class="col-lg-3 col-md-4 col-form-label">Подтвердить пароль</label>
+                                                <div class="col-lg-6 col-md-8">
+                                                    <input type="password" class="form-control" id="c-password">
+                                                    <button class="btn show-btn" type="button">Показать</button>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="birth" class="col-lg-3 col-md-4 col-form-label">Дата рождения</label>
+                                                <div class="col-lg-6 col-md-8">
+                                                    <input type="text" class="form-control" id="birth" placeholder="ДД/ММ/ГГГГ">
+                                                </div>
+                                            </div>
+                                            <div class="form-check row p-0 mt-20">
+                                                <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-4">
+                                                    <input class="form-check-input" value="#" id="offer" type="checkbox">
+                                                    <label class="form-check-label" for="offer">Получайте предложения от наших партнёров</label>
+                                                </div>
+                                            </div>
+                                            <div class="form-check row p-0 mt-20">
+                                                <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-4">
+                                                    <input class="form-check-input" value="#" id="subscribe" type="checkbox">
+                                                    <label class="form-check-label" for="subscribe">Войдите<br>Подпишитесь.</label>
+                                                </div>
+                                            </div>
+                                            <div class="register-box mt-40">
+                                                <button type="submit" class="return-customer-btn f-right">Сохранить</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- My Account Page End Here -->
+        <!-- Brand Logo Start -->
+        <div class="brand-area pb-60">
+            <div class="container">
+                <!-- Brand Banner Start -->
+                <div class="brand-banner owl-carousel">
+                    <div class="single-brand">
+                        <a href="#"><%= image_tag "brand/1.png" %></a>
+                    </div>
+                    <div class="single-brand">
+                        <a href="#"><%= image_tag "brand/2.png" %></a>
+                    </div>
+                    <div class="single-brand">
+                        <a href="#"><%= image_tag "brand/3.png" %></a>
+                    </div>
+                    <div class="single-brand">
+                        <a href="#"><%= image_tag "brand/4.png" %></a>
+                    </div>
+                    <div class="single-brand">
+                        <a href="#"><%= image_tag "brand/5.png" %></a>
+                    </div>
+                    <div class="single-brand">
+                        <a href="#"><%= image_tag "brand/1.png" %></a>
+                    </div>
+                    <div class="single-brand">
+                        <a href="#"><%= image_tag "brand/2.png" %></a>
+                    </div>
+                    <div class="single-brand">
+                        <a href="#"><%= image_tag "brand/3.png" %></a>
+                    </div>
+                    <div class="single-brand">
+                        <a href="#"><%= image_tag "brand/4.png" %></a>
+                    </div>
+                    <div class="single-brand">
+                        <a href="#"><%= image_tag "brand/5.png" %></a>
+                    </div>
+                </div>
+                <!-- Brand Banner End -->                
+            </div>
+        </div>
+        <!-- Brand Logo End -->
+
+        
+                      <footer class="off-white-bg">
+                        <!-- Footer Top Start -->
+                        <div class="footer-top pt-50 pb-60">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-6 mr-auto ml-auto">
+                                        <div class="newsletter text-center">
+                                            <div class="main-news-desc">
+                                                 <div class="news-desc">
+                                                     <h3>Внимание</h3>
+                                                     <p>Наши новинки</p>
+                                                 </div>
+                                            </div>
+                                            <div class="newsletter-box">
+                                                <form action="#">
+                                                    <input class="subscribe" placeholder="Введите ваш email" name="email" id="subscribe" type="text">
+                                                    <button type="submit" class="submit">Подписаться</button>
+                                                </form>
+                                            </div>
+                                         </div>                            
+                                    </div>
+                                </div>                    
+                                <div class="row">
+                                    <!-- Single Footer Start -->
+                                    <div class="col-lg-4  col-md-7 col-sm-6">
+                                        <div class="single-footer">
+                                            <h3>Связаться с нами</h3>
+                                            <div class="footer-content">
+                                                <div class="loc-address">
+                                                    <span><i class="fa fa-map-marker"></i>Мясниковский р-н, с. Крым, ул. 8-я линия, 52</span>
+                                                    <span><i class="fa fa-envelope-o"></i>email : asvatur@mail.ru</span>
+                                                    <span><i class="fa fa-phone"></i>Тел: +79094191479</span>
+                                                </div>
+                                                <div class="payment-mth"><a href="#"><%= image_tag "footer/1.png" %></a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Single Footer Start -->
+                                    <!-- Single Footer Start -->
+                                    <div class="col-lg-2  col-md-5 col-sm-6 footer-full">
+                                        <div class="single-footer">
+                                            <h3 class="footer-title">Информация</h3>
+                                            <div class="footer-content">
+                                                <ul class="footer-list">
+                                                    <li><a href="#">Карта сайта</a></li>
+                                                    <li><a href="#">Спец. предложения</a></li>
+                                                    <li><a href="#">Работа</a></li>
+                                                    <li><a href="#">Информация о доставке</a></li>
+                                                    <li><a href="#">История заказов</a></li>
+                                                    <li><a href="#">Политика использования сайта</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Single Footer Start -->
+                                    <!-- Single Footer Start -->
+                                    <div class="col-lg-2  col-md-4 col-md-4 col-sm-6 footer-full">
+                                        <div class="single-footer">
+                                            <h3 class="footer-title">Мой профиль</h3>
+                                            <div class="footer-content">
+                                                <ul class="footer-list">
+                                                    <li><a href="account.html">Мой профиль</a></li>
+                                                    <li><a href="#">Проверить</a></li>
+                                                    <li><a href="#">Войти</a></li>
+                                                    <li><a href="#">адрес</a></li>
+                                                    <li><a href="#">Статус заказа</a></li>
+                                                    <li><a href="#">Карта сайта</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Single Footer Start -->
+                                    <!-- Single Footer Start -->
+                                    <div class="col-lg-2 col-md-4 col-sm-6 footer-full">
+                                        <div class="single-footer">
+                                            <h3 class="footer-title">Сервис пользователей</h3>
+                                            <div class="footer-content">
+                                                <ul class="footer-list">
+                                                    <li><a href="account.html">Мой профиль</a></li>
+                                                    <li><a href="#">Новое</a></li>
+                                                    <li><a href="#">Купоны на подарки</a></li>
+                                                    <li><a href="#">Политика возврата</a></li>
+                                                    <li><a href="#">Ваши заказы</a></li>
+                                                    <li><a href="#">Почта</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Single Footer Start -->
+                                    <!-- Single Footer Start -->
+                                    <div class="col-lg-2 col-md-4 col-sm-6 footer-full">
+                                        <div class="single-footer">
+                                            <h3 class="footer-title">Позвольте нам помочь Вам</h3>
+                                            <div class="footer-content">
+                                                <ul class="footer-list">
+                                                    <li><a href="#">Ваш профиль</a></li>
+                                                    <li><a href="#">Ваши заказы</a></li>
+
+
+                      <li><a href="#">Доставка</a></li>
+                                                    <li><a href="#">Основной</a></li>
+                                                    <li><a href="#">Замена</a></li>
+                                                    <li><a href="#">Управление </a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Single Footer Start -->
+                                </div>
+                                <!-- Row End -->
+                            </div>
+                            <!-- Container End -->
+                        </div>
+                        <!-- Footer Top End -->
+                        <!-- Footer Bottom Start -->
+                        <div class="footer-bottom off-white-bg2">
+                            <div class="container">
+                                <div class="footer-bottom-content">
+                                    <p class="copy-right-text">Авторское право © <a  href="#">Грядка</a> Все права защищены.</p>
+                                    <div class="footer-social-content">
+                                        <ul class="social-content-list">
+                                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-wifi"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Container End -->
+                        </div>
+                        <!-- Footer Bottom End -->
+                      </footer>
+                      <!-- Footer End -->
+    </div>
+                                  <!-- Wrapper End -->
+                                    <!-- jquery 3.12.4 -->
+                                    <%= javascript_include_tag('vendor/jquery-1.12.4.min.js') %>
+                                    <!-- mobile menu js  -->
+                                    <%= javascript_include_tag('jquery.meanmenu.min.js') %>
+                                    <!-- scroll-up js -->
+                                    <%= javascript_include_tag('jquery.scrollUp.js') %>
+                                    <!-- owl-carousel js -->
+                                    <%= javascript_include_tag('owl.carousel.min.js') %>
+                                    <!-- slick js -->
+                                    <%= javascript_include_tag('slick.min.js') %>
+                                    <!-- wow js -->
+                                    <%= javascript_include_tag('wow.min.js') %>
+                                    <!-- price slider js -->
+                                    <%= javascript_include_tag('jquery-ui.min.js') %>
+                                    <%= javascript_include_tag('jquery.countdown.min.js') %>
+                                    <!-- nivo slider js -->
+                                    <%= javascript_include_tag('jquery.nivo.slider.js') %>
+                                    <!-- fancybox js -->
+                                    <%= javascript_include_tag('jquery.fancybox.min.js') %>
+                                    <!-- bootstrap -->
+                                    <%= javascript_include_tag('bootstrap.min.js') %>
+                                    <!-- popper -->
+                                    <%= javascript_include_tag('popper.js') %>
+                                    <!-- plugins -->
+                                    <%= javascript_include_tag('plugins.js') %>
+                                    <!-- main js -->
+                                    <%= javascript_include_tag('main.js') %>
+</body>
+
+</html>
