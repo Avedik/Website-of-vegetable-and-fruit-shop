@@ -1340,6 +1340,7 @@
                                 </div>
                                 <!-- #grid view End -->
                                 <div id="list-view" class="tab-pane active">
+                                  <% @products.each do |product| %>
                                     <!-- Single Product Start -->
                                     <div class="single-product">
                                         <!-- Product Image Start -->
@@ -1359,224 +1360,21 @@
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                             </div>                                
-                                            <h4><a href="product.html">Название продукта</a></h4>
+                                            <h4><a href="product.html"><%= product.name %></a></h4>
                                             <p><span class="price">30.00 руб</span><del class="prev-price">32.00 руб</del></p>
                                             <p>Насладитесь нашей продукцией.</p>
                                             <div class="pro-actions">
                                                 <div class="actions-secondary">
-                                                    <a href="wishlist.html" data-toggle="tooltip" title="Add to Wishlist"><i class="fa fa-heart"></i></a>
-                                                    <a class="add-cart" href="cart.html" data-toggle="tooltip" title="Add to Cart">Добавить в корзину</a>
-                                                    <a href="compare.html" data-toggle="tooltip" title="Add to Compare"><i class="fa fa-signal"></i></a>
+                                                    <a href="wishlist.html" data-toggle="tooltip" title="Добавить в избранное"><i class="fa fa-heart"></i></a>
+                                                    <a class="add-cart" href="cart.html" data-toggle="tooltip" title="Добавить в корзину">Добавить в корзину</a>
+                                                    <a href="compare.html" data-toggle="tooltip" title="Сравнить"><i class="fa fa-signal"></i></a>
                                                 </div>
                                             </div>
                                         </div>
                                         <!-- Product Content End -->
                                     </div>
-                                    <!-- Single Product Start -->
-                                    <!-- Single Product Start -->
-                                    <div class="single-product">
-                                        <!-- Product Image Start -->
-                                        <div class="pro-img">
-                                            <a href="product.html">
-                                                <%= image_tag "products/3.jpg" %>
-                                                <%= image_tag "products/4.jpg" %>
-                                            </a>
-                                        </div>
-                                        <!-- Product Image End -->
-                                        <!-- Product Content Start -->
-                                        <div class="pro-content">
-                                            <div class="product-rating">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </div>                                
-                                            <h4><a href="product.html">Название продукта</a></h4>
-                                            <p><span class="price">30.00 руб</span><del class="prev-price">32.00 руб</del></p>
-                                            <p>Насладитесь нашей продукцией.</p>
-                                            <div class="pro-actions">
-                                                <div class="actions-secondary">
-                                                    <a href="wishlist.html" data-toggle="tooltip" title="Add to Wishlist"><i class="fa fa-heart"></i></a>
-                                                    <a class="add-cart" href="cart.html" data-toggle="tooltip" title="Add to Cart">Добавить в корзину</a>
-                                                    <a href="compare.html" data-toggle="tooltip" title="Add to Compare"><i class="fa fa-signal"></i></a>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                        <!-- Product Content End -->
-                                        <span class="sticker-new">-30%</span>
-                                    </div>
-                                    <!-- Single Product Start -->
-                                    <!-- Single Product Start -->
-                                    <div class="single-product">
-                                        <!-- Product Image Start -->
-                                        <div class="pro-img">
-                                            <a href="product.html">
-                                                <%= image_tag "products/5.jpg" %>
-                                                <%= image_tag "products/6.jpg" %>
-                                            </a>
-                                        </div>
-                                        <!-- Product Image End -->
-                                        <!-- Product Content Start -->
-                                        <div class="pro-content">
-
-                                            <div class="product-rating">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </div>                                
-                                            <h4><a href="product.html">Название продукта</a></h4>
-                                            <p><span class="price">30.00 руб</span><del class="prev-price">32.00 руб</del></p>
-                                            <p>Насладитесь нашей продукцией.</p>
-                                            <div class="pro-actions">
-                                                <div class="actions-secondary">
-                                                    <a href="wishlist.html" data-toggle="tooltip" title="Add to Wishlist"><i class="fa fa-heart"></i></a>
-                                                    <a class="add-cart" href="cart.html" data-toggle="tooltip" title="Add to Cart">Добавить в корзину</a>
-                                                    <a href="compare.html" data-toggle="tooltip" title="Add to Compare"><i class="fa fa-signal"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Product Content End -->
-                                    </div>
-                                    <!-- Single Product Start -->
-                                    <!-- Single Product Start -->
-                                    <div class="single-product">
-                                        <!-- Product Image Start -->
-                                        <div class="pro-img">
-                                            <a href="product.html">
-                                                <%= image_tag "products/7.jpg" %>
-                                                <%= image_tag "products/8.jpg" %>
-                                            </a>
-                                        </div>
-                                        <!-- Product Image End -->
-                                        <!-- Product Content Start -->
-                                        <div class="pro-content">
-                                            <div class="product-rating">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </div>                                
-                                            <h4><a href="product.html">Название продукта</a></h4>
-                                            <p><span class="price">30.00 руб</span><del class="prev-price">32.00 руб</del></p>
-                                            <p>Насладитесь нашей продукцией.</p>
-                                            <div class="pro-actions">
-                                                <div class="actions-secondary">
-                                                    <a href="wishlist.html" data-toggle="tooltip" title="Add to Wishlist"><i class="fa fa-heart"></i></a>
-                                                    <a class="add-cart" href="cart.html" data-toggle="tooltip" title="Add to Cart">Добавить в корзину</a>
-                                                    <a href="compare.html" data-toggle="tooltip" title="Add to Compare"><i class="fa fa-signal"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Product Content End -->
-                                        <span class="sticker-new">-30%</span>
-                                    </div>
-                                    <!-- Single Product Start -->
-                                    <!-- Single Product Start -->
-                                    <div class="single-product">
-                                        <!-- Product Image Start -->
-                                        <div class="pro-img">
-                                            <a href="product.html">
-                                                <%= image_tag "products/8.jpg" %>
-                                                <%= image_tag "products/7.jpg" %>
-                                            </a>
-                                        </div>
-                                        <!-- Product Image End -->
-                                        <!-- Product Content Start -->
-                                        <div class="pro-content">
-                                            <div class="product-rating">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </div>                                
-                                            <h4><a href="product.html">Название продукта</a></h4>
-                                            <p><span class="price">30.00 руб</span><del class="prev-price">32.00 руб</del></p>
-                                            <p>Насладитесь нашей продукцией.</p>
-                                            <div class="pro-actions">
-                                                <div class="actions-secondary">
-                                                    <a href="wishlist.html" data-toggle="tooltip" title="Add to Wishlist"><i class="fa fa-heart"></i></a>
-                                                    <a class="add-cart" href="cart.html" data-toggle="tooltip" title="Add to Cart">Добавить в корзинуCart</a>
-                                                    <a href="compare.html" data-toggle="tooltip" title="Add to Compare"><i class="fa fa-signal"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Product Content End -->
-                                    </div>
-                                    <!-- Single Product Start -->
-                                    <!-- Single Product Start -->
-                                    <div class="single-product">
-                                        <!-- Product Image Start -->
-                                        <div class="pro-img">
-                                            <a href="product.html">
-                                                <%= image_tag "products/6.jpg" %>
-                                                <%= image_tag "products/5.jpg" %>
-                                            </a>
-                                        </div>
-                                        <!-- Product Image End -->
-                                        <!-- Product Content Start -->
-                                        <div class="pro-content">
-                                            <div class="product-rating">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </div>                                
-                                            <h4><a href="product.html">Название продукта</a></h4>
-                                            <p><span class="price">30.00 руб</span><del class="prev-price">32.00 руб</del></p>
-                                            <p>Насладитесь нашей продукцией.</p>
-                                            <div class="pro-actions">
-                                                <div class="actions-secondary">
-                                                    <a href="wishlist.html" data-toggle="tooltip" title="Add to Wishlist"><i class="fa fa-heart"></i></a>
-                                                    <a class="add-cart" href="cart.html" data-toggle="tooltip" title="Add to Cart">Добавить в корзину</a>
-                                                    <a href="compare.html"
- data-toggle="tooltip" title="Add to Compare"><i class="fa fa-signal"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Product Content End -->
-                                        <span class="sticker-new">-30%</span>
-                                    </div>
-                                    <!-- Single Product Start -->
-                                    <!-- Single Product Start -->
-                                    <div class="single-product">
-                                        <!-- Product Image Start -->
-                                        <div class="pro-img">
-                                            <a href="product.html">
-                                                <%= image_tag "products/4.jpg" %>
-                                                <%= image_tag "products/3.jpg" %>
-                                            </a>
-                                        </div>
-                                        <!-- Product Image End -->
-                                        <!-- Product Content Start -->
-                                        <div class="pro-content">
-                                            <div class="product-rating">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </div>                                
-                                            <h4><a href="product.html">Название продукта</a></h4>
-                                            <p><span class="price">30.00 руб</span><del class="prev-price">32.00 руб</del></p>
-                                            <p>Насладитесь нашей продукцией.</p>
-                                            <div class="pro-actions">
-                                                <div class="actions-secondary">
-                                                    <a href="wishlist.html" data-toggle="tooltip" title="Add to Wishlist"><i class="fa fa-heart"></i></a>
-                                                    <a class="add-cart" href="cart.html" data-toggle="tooltip" title="Add to Cart">Добавить в корзину</a>
-                                                    <a href="compare.html" data-toggle="tooltip" title="Add to Compare"><i class="fa fa-signal"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Product Content End -->
-                                    </div>                                  
+                                    <!-- Single Product End -->
+                                  <% end %>          
                                 </div>
                                 <!-- #list view End -->
                             </div>

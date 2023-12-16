@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get "/product.html", to: "main#product"
   get "/register.html", to: "main#register"
   get "/shop.html", to: "main#shop"
+  post "/shop.html", to: "main#shop"
   get "/wishlist.html", to: "main#wishlist"
   get "/404.html", to: "main#index"
   get "/blog-details.html", to: "main#index"

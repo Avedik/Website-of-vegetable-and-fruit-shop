@@ -1,5 +1,7 @@
 class MainController < ApplicationController
-  def index; end
+  def index
+    @products = Product.all
+  end
 
   def login; end
 
@@ -21,7 +23,9 @@ class MainController < ApplicationController
 
   def register; end
 
-  def shop; end
+  def shop
+    @products = Product.where(name: params[:product])
+  end
 
   def wishlist; end
 end
