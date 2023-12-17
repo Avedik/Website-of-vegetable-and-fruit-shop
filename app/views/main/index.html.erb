@@ -137,7 +137,7 @@
                   <ul class="middle-menu-list">
 
                     <li><a href="about.html">О нас</a></li>
-                    <li><a href="shop.html">Магазин<i class="fa fa-angle-down"></i></a>
+                    <li><a href="shop.html">Магазин v</a>
                       <!-- Home Version Dropdown Start -->
                       <ul class="ht-dropdown dropdown-style-two">
                         <li><a href="shop.html">Магазин</a>
@@ -163,16 +163,8 @@
                       </ul>
                       <!-- Home Version Dropdown End -->
                     </li>
-                    <li><a href="blog.html">Блог<i class="fa fa-angle-down"></i></a>
-                      <!-- Home Version Dropdown Start -->
-                      <ul class="ht-dropdown dropdown-style-two">
-                        <li><a href="blog.html">Страница блога</a></li>
-                        <li><a href="blog-details.html">Материал блога</a></li>
-                      </ul>
-                      <!-- Home Version Dropdown End -->
-
-                    </li>
-                    <li><a href="#">страницы<i class="fa fa-angle-down"></i></a>
+                    
+                    <li><a href="#">Вход/Регистрация v</a>
                       <!-- Home Version Dropdown Start -->
                       <ul class="ht-dropdown dropdown-style-two">
                         <li><a href="login.html">Войти</a></li>
@@ -201,7 +193,7 @@
                     </ul>
                   </li>
                   <li><a href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
-                  <li><a href="#"><i class="fa fa-shopping-basket"></i><span class="cart-counter">2</span></a>
+                  <li><a href="#"><i class="fa fa-shopping-basket"></i><span class="cart-counter"><%= @cart.count %></span></a>
                     <ul class="ht-dropdown main-cart-box">
                       <li>
                         <!-- Cart Box Start -->
@@ -396,7 +388,11 @@
               <div class="pro-actions">
                 <div class="actions-secondary">
                   <a href="wishlist.html" data-toggle="tooltip" title="Add to Wishlist"><i class="fa fa-heart"></i></a>
-                  <a class="add-cart" href="cart.html" data-toggle="tooltip" title="Add to Cart">Добавить в корзину</a>
+                      <% if @cart.include?(product) %>
+                        <%= button_to 'Удалить из корзины', remove_from_cart_path(product), method: :delete %>
+                      <% else %>
+                        <%= button_to 'Добавить в корзину', add_to_cart_path(product), method: :post %>
+                      <% end %>
                   <a href="compare.html" data-toggle="tooltip" title="Add to Compare"><i class="fa fa-signal"></i></a>
                 </div>
               </div>
@@ -1789,7 +1785,7 @@
                 <div class="footer-content">
                   <ul class="footer-list">
                     <li><a href="#">Карта сайта</a></li>
-                    <li><a href="#">Спец. предложения</a></li>
+                    <li><a href="edit.html">Редактирование каталога</a></li>
                     <li><a href="#">Работа</a></li>
                     <li><a href="#">Информация о доставке</a></li>
                     <li><a href="#">История заказов</a></li>

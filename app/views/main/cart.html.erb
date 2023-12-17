@@ -113,7 +113,7 @@
                                        <ul class="middle-menu-list">
 
                                            <li><a href="about.html">О нас</a></li>                                        
-                                           <li><a href="shop.html">Магазин<i class="fa fa-angle-down"></i></a>
+                                           <li><a href="shop.html">Магазин v</a>
                                                <!-- Home Version Dropdown Start -->
                                                <ul class="ht-dropdown dropdown-style-two">
                                                    <li><a href="shop.html">Магазин</a>
@@ -139,17 +139,7 @@
                                                </ul>
                                                <!-- Home Version Dropdown End -->
                                            </li>                                        
-                                           <li><a href="blog.html">Блог<i class="fa fa-angle-down"></i></a>
-                                               <!-- Home Version Dropdown Start -->
-                                               <ul class="ht-dropdown dropdown-style-two">
-                                                   <li><a href="blog.html">Страница блога</a></li>
-                                                   <li><a href="blog-details.html">Материал блога</a></li>
-                                               </ul>
-                                               <!-- Home Version Dropdown End -->
-
-
-                                        </li>
-                                           <li><a href="#">страницы<i class="fa fa-angle-down"></i></a>
+                                           <li><a href="#">Вход/Регистрация v</a>
                                                <!-- Home Version Dropdown Start -->
                                                <ul class="ht-dropdown dropdown-style-two">
                                                    <li><a href="login.html">Войти</a></li>
@@ -178,7 +168,7 @@
                                            </ul>
                                        </li>                                    
                                        <li><a href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
-                                       <li><a href="#"><i class="fa fa-shopping-basket"></i><span class="cart-counter">2</span></a>
+                                       <li><a href="#"><i class="fa fa-shopping-basket"></i><span class="cart-counter"><%= @cart.count %></span></a>
                                            <ul class="ht-dropdown main-cart-box">
                                                <li>
                                                    <!-- Cart Box Start -->
@@ -302,8 +292,6 @@
                <h2 class="text-capitalize sub-heading">корзина</h2>
                 <div class="row">
                     <div class="col-md-12">
-                        <!-- Form Start -->
-                        <form action="#">
                             <!-- Table Content Start -->
                             <div class="table-content table-responsive mb-50">
                                 <table>
@@ -312,41 +300,33 @@
                                             <th class="product-thumbnail">Изображение</th>
                                             <th class="product-name">Продукт</th>
                                             <th class="product-price">Цена</th>
-                                            <th class="product-quantity">Качество</th>
+                                            <th class="product-quantity">Количеств</th>
                                             <th class="product-subtotal">Итог</th>
                                             <th class="product-remove">Удалить</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                      <% @cart.each do |cart_item| %>
                                         <tr>
                                             <td class="product-thumbnail">
                                                 <a href="#"><%= image_tag "products/1.jpg" %></a>
                                             </td>
-                                            <td class="product-name"><a href="#">Название продукта</a></td>
-                                            <td class="product-price"><span class="amount">165.00 руб</span></td>
+                                            <td class="product-name"><a href="#"><%= cart_item.name %></a></td>
+                                            <td class="product-price"><span class="amount"><%= cart_item.price %></span></td>
                                             <td class="product-quantity"><input type="number" value="1" /></td>
                                             <td class="product-subtotal">165.00 руб</td>
-                                            <td class="product-remove"> <a href="#"><i class="fa fa-times" aria-hidden="true"></i></a></td>
+                                            <td class="product-remove"> <%= button_to 'x', remove_from_cart_path(cart_item), method: :delete %></td>
                                         </tr>
-                                        <tr>
-                                            <td class="product-thumbnail">
-                                                <a href="#"><%= image_tag "products/2.jpg" %></a>
-                                            </td>
-                                            <td class="product-name"><a href="#">Название продукта</a></td>
-                                            <td class="product-price"><span class="amount">50.00 руб</span></td>
-                                            <td class="product-quantity"><input type="number" value="1" /></td>
-                                            <td class="product-subtotal">50.00 руб</td>
-                                            <td class="product-remove"> <a href="#"><i class="fa fa-times" aria-hidden="true"></i></a></td>
-                                        </tr>
+                                      <% end %>
                                     </tbody>
                                 </table>
                             </div>
-                            <!-- Table Content Start -->
+                            <!-- Table Content End -->
                             <div class="row">
                                <!-- Cart Button Start -->
                                 <div class="col-lg-8 col-md-7">
                                     <div class="buttons-cart">
-                                        <input type="submit" value="Update Cart" />
+                                        <input type="submit" value="Обновить корзину" />
                                         <a href="#">Возвращайтесь</a>
                                     </div>
                                 </div>
@@ -371,15 +351,13 @@
                                             </tbody>
                                         </table>
                                         <div class="wc-proceed-to-checkout">
-                                            <a href="#">Переходите к оформлению заказа</a>
+                                            <a href="checkout.html">Переходите к оформлению заказа</a>
                                         </div>
                                     </div>
                                 </div>
                                 <!-- Cart Totals End -->
                             </div>
                             <!-- Row End -->
-                        </form>
-                        <!-- Form End -->
                     </div>
                 </div>
                  <!-- Row End -->

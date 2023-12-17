@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get "/product.html", to: "main#product"
   get "/register.html", to: "main#register"
   get "/shop.html", to: "main#shop"
+  get "/edit.html", to: "main#edit"
   post "/shop.html", to: "main#shop"
   get "/wishlist.html", to: "main#wishlist"
   get "/404.html", to: "main#index"
@@ -22,4 +23,10 @@ Rails.application.routes.draw do
   get "/forgot-password.html", to: "main#index"
   get "/index-2.html", to: "main#index"
   get "/index-3.html", to: "main#index"
+  get "create", to: "main#create"
+
+  post 'main/add_to_cart/:id', to: 'main#add_to_cart', as: 'add_to_cart'
+  delete 'main/remove_from_cart/:id', to: 'main#remove_from_cart', as: 'remove_from_cart'
+  post 'add_new_product', to: 'main#add_new_product'
+  delete 'main/remove_from_db/:id', to: 'main#remove_from_db', as: 'remove_from_db'
 end

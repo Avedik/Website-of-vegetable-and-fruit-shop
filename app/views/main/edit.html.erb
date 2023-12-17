@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Блог || Грядка</title>
+    <title>Редактирование каталога || Грядка</title>
     <meta name="description" content="Default Description">
     <meta name="keywords" content="E-commerce" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -113,7 +113,7 @@
                                       <ul class="middle-menu-list">
 
                                           <li><a href="about.html">О нас</a></li>                                        
-                                          <li><a href="shop.html">Магазин<i class="fa fa-angle-down"></i></a>
+                                          <li><a href="shop.html">Магазин v</a>
                                               <!-- Home Version Dropdown Start -->
                                               <ul class="ht-dropdown dropdown-style-two">
                                                   <li><a href="shop.html">Магазин</a>
@@ -139,17 +139,7 @@
                                               </ul>
                                               <!-- Home Version Dropdown End -->
                                           </li>                                        
-                                          <li><a href="blog.html">Блог<i class="fa fa-angle-down"></i></a>
-                                              <!-- Home Version Dropdown Start -->
-                                              <ul class="ht-dropdown dropdown-style-two">
-                                                  <li><a href="blog.html">Страница блога</a></li>
-                                                  <li><a href="blog-details.html">Материал блога</a></li>
-                                              </ul>
-                                              <!-- Home Version Dropdown End -->
-
-
-                                       </li>
-                                          <li><a href="#">страницы<i class="fa fa-angle-down"></i></a>
+                                          <li><a href="#">Вход/Регистрация v</a>
                                               <!-- Home Version Dropdown Start -->
                                               <ul class="ht-dropdown dropdown-style-two">
                                                   <li><a href="login.html">Войти</a></li>
@@ -178,7 +168,7 @@
                                           </ul>
                                       </li>                                    
                                       <li><a href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
-                                      <li><a href="#"><i class="fa fa-shopping-basket"></i><span class="cart-counter">2</span></a>
+                                      <li><a href="#"><i class="fa fa-shopping-basket"></i><span class="cart-counter"><%= @cart.count %></span></a>
                                           <ul class="ht-dropdown main-cart-box">
                                               <li>
                                                   <!-- Cart Box Start -->
@@ -289,228 +279,112 @@
                 <div class="breadcrumb">
                     <ul>
                         <li><a href="index.html">Главная</a></li>
-                        <li class="active"><a href="blog.html">Блог</a></li>
+                        <li class="active"><a href="blog.html">Редактирование каталога</a></li>
                     </ul>
                 </div>
             </div>
             <!-- Container End -->
         </div>
         <!-- Breadcrumb End -->
-        <!-- Blog Area Start -->
-        <div class="blog-page pb-60">
-            <div class="container">
-                <!-- Row End -->
-                <div class="row">
-                    <!-- Single Blog Start -->                    
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="single-blog">
-                            <div class="blog-img">
-                                <a href="blog-details.html"><%= image_tag "blog/1.jpg" alt="blog-image"></a>
-                            </div>
-                            <div class="blog-content">
-                                    <h4 class="blog-title"><a href="blog-details.html">Описание</a></h4>
-                                <div class="blog-meta">
-                                    <ul>
-                                        <li><span>От: </span> <a href="#">Грядка,</a></li>
-                                        <li><span>Дата: </span> <a href="#">30 Ноября, 2023</a></li>
-                                    </ul>
-                                </div>
-                                <div class="readmore">
-                                    <a href="blog-details.html">Подробнее.....</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Single Blog End -->
-                    <!-- Single Blog Start -->                    
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="single-blog">
-                            <div class="blog-img">
-                                <a href="blog-details.html"><%= image_tag "blog/2.jpg" alt="blog-image"></a>
-                            </div>
-                            <div class="blog-content">
-                                    <h4 class="blog-title"><a href="blog-details.html">Описание</a></h4>
-                                <div class="blog-meta">
-                                    <ul>
-                                        <li><span>От: </span> <a href="#">Грядка,</a></li>
-                                        <li><span>Дата: </span> <a href="#">30 Ноября, 2023</a></li>
-                                    </ul>
-                                </div>
-                                <div class="readmore">
-                                    <a href="blog-details.html">Подробнее.....</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Single Blog End -->
-                    <!-- Single Blog Start -->                    
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="single-blog">
-                            <div class="blog-img">
-                                <a href="blog-details.html"><%= image_tag "blog/3.jpg" alt="blog-image"></a>
-                            </div>
-                            <div class="blog-content">
-                                    <h4 class="blog-title"><a href="blog-details.html">Описание</a></h4>
-                                <div class="blog-meta">
-                                    <ul>
-                                        <li><span>От: </span> <a href="#">Грядка,</a></li>
-                                        <li><span>Дата: </span> <a href="#">30 Ноября, 2023</a></li>
-                                    </ul>
-                                </div>
-                                <div class="readmore">
-                                    <a href="blog-details.html">Подробнее.....</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Single Blog End -->
-                    <!-- Single Blog Start -->                    
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="single-blog">
-                            <div class="blog-img">
-                                <a href="blog-details.html"><%= image_tag "blog/4.jpg" alt="blog-image"></a>
-                            </div>
-                            <div class="blog-content">
-                                    <h4 class="blog-title"><a href="blog-details.html">Описание</a></h4>
-                                <div class="blog-meta">
-                                    <ul>
-                                        <li><span>От: </span> <a href="#">Грядка,</a></li>
-                                        <li><span>Дата: </span> <a href="#">30 Ноября, 2023</a></li>
-                                    </ul>
-                                </div>
-                                <div class="readmore">
-                                    <a href="blog-details.html">Подробнее.....</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Single Blog End -->
-                    <!-- Single Blog Start -->                    
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="single-blog">
-                            <div class="blog-img">
-                                <a href="blog-details.html"><%= image_tag "blog/5.jpg" alt="blog-image"></a>
-                            </div>
-                            <div class="blog-content">
-                                    <h4 class="blog-title"><a href="blog-details.html">Описание</a></h4>
-                                <div class="blog-meta">
-                                    <ul>
-                                        <li><span>От: </span> <a href="#">Грядка,</a></li>
-                                        <li><span>Дата: </span> <a href="#">30 Ноября, 2023</a></li>
-                                    </ul>
-                                </div>
-                                <div class="readmore">
-                                    <a href="blog-details.html">Подробнее.....</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Single Blog End -->
-                    <!-- Single Blog Start -->                    
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="single-blog">
-                            <div class="blog-img">
-                                <a href="blog-details.html"><%= image_tag "blog/6.jpg" alt="blog-image"></a>
-                            </div>
-                            <div class="blog-content">
-                                    <h4 class="blog-title"><a href="blog-details.html">Описание</a></h4>
-                                <div class="blog-meta">
-                                    <ul>
-                                        <li><span>От: </span> <a href="#">Грядка,</a></li>
-                                        <li><span>Дата: </span> <a href="#">30 Ноября, 2023</a></li>
-                                    </ul>
-                                </div>
-                                <div class="readmore">
-                                    <a href="blog-details.html">Подробнее.....</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Single Blog End -->
-                    <!-- Single Blog Start -->                    
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="single-blog">
-                            <div class="blog-img">
-                                <a href="blog-details.html"><%= image_tag "blog/7.jpg" alt="blog-image"></a>
-                            </div>
-                            <div class="blog-content">
-                                    <h4 class="blog-title"><a href="blog-details.html">Описание</a></h4>
-                                <div class="blog-meta">
-                                    <ul>
-                                        <li><span>От: </span> <a href="#">Грядка,</a></li>
-                                        <li><span>Дата: </span> <a href="#">30 Ноября, 2023</a></li>
-                                    </ul>
-                                </div>
-                                <div class="readmore">
-                                    <a href="blog-details.html">Подробнее.....</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Single Blog End -->
-                    <!-- Single Blog Start -->                    
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="single-blog">
-
-
-                            <div class="blog-img">
-                                <a href="blog-details.html"><%= image_tag "blog/8.jpg" alt="blog-image"></a>
-                            </div>
-                            <div class="blog-content">
-                                    <h4 class="blog-title"><a href="blog-details.html">Описание</a></h4>
-                                <div class="blog-meta">
-                                    <ul>
-                                        <li><span>От </span> <a href="#">Грядка,</a></li>
-                                        <li><span>Дата: </span> <a href="#">30 Ноября, 2023</a></li>
-                                    </ul>
-                                </div>
-                                <div class="readmore">
-                                    <a href="blog-details.html">Подробнее.....</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Single Blog End -->
-                    <!-- Single Blog Start -->                    
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="single-blog">
-                            <div class="blog-img">
-                                <a href="blog-details.html"><%= image_tag "blog/9.jpg" alt="blog-image"></a>
-                            </div>
-                            <div class="blog-content">
-                                    <h4 class="blog-title"><a href="blog-details.html">Описание</a></h4>
-                                <div class="blog-meta">
-                                    <ul>
-                                        <li><span>От: </span> <a href="#">Грядка,</a></li>
-                                        <li><span>Дата: </span> <a href="#">30 Ноября, 2023</a></li>
-                                    </ul>
-                                </div>
-                                <div class="readmore">
-                                    <a href="blog-details.html">Подробнее.....</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Single Blog End -->
-                </div>
-                <!-- Row End -->
-                <div class="row">
-                    <div class="col-sm-12">
-                        <ul class="blog-pagination pt-20">
-                            <li class="active"><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
-                        </ul>
-                        <!-- End of .blog-pagination -->
-                    </div>
-                </div>
-                <!-- Row End -->
+          <div class="container">
+          <h3 class="mb-10">Добавление товара</h3>
+              <%= form_tag('add_new_product') do -%>
+                           <div class="form-group">
+                                      <label class="control-label">Введите название продукта </label>
+                                      <input type="text" name="name" placeholder="Введите название..." id="input-product" class="form-control">
+                           </div>
+                           <div class="form-group">
+                                      <label class="control-label">Цена за кг </label>
+                                      <input type="text" name="price" placeholder="Цена" id="input-price" class="form-control">
+                           </div>
+                          <div class="form-group">
+                                      <label class="control-label">Количество (кг) </label>
+                                      <input type="text" name="quantity" placeholder="Количество" id="input-quantity" class="form-control">
+                          </div>
+                      <%= submit_tag 'Добавить' %>
+               <% end -%>
             </div>
-            <!-- Container End -->
         </div>
-        <!-- Blog Area End -->
-        <!-- Brand Logo Start -->
+         <div class="upper-banner banner pb-60">
+      <div class="container">
+        <div class="row">
+          <!-- Single Banner Start -->
+          <div class="col-sm-6">
+            <div class="single-banner zoom">
+              <a href="#">
+                <%= image_tag "banner/pattern.png" %>
+              </a>
+            </div>
+          </div>
+          <!-- Single Banner End -->
+          <!-- Single Banner Start -->
+          <div class="col-sm-6">
+            <div class="single-banner zoom">
+              <a href="#">
+                <%= image_tag "banner/pattern.png" %>
+              </a>
+            </div>
+          </div>
+          <!-- Single Banner End -->
+        </div>
+        <!-- Row End -->
+      </div>
+      <!-- Container End -->
+    </div>
+         <div class="container">
+           <h3 class="mb-10">Товары на базе</h3>
+            <!-- Table Content Start -->
+            <div class="table-content table-responsive mb-50">
+            <table>
+                            <thead>
+                                         <tr>
+                                                            <th class="product-name">Продукт</th>
+                                                            <th class="product-price">Цена</th>
+                                                            <th class="product-quantity">Количество на базе</th>
+                                                            <th class="product-remove">Удалить из базы</th>
+                                       </tr>
+                            </thead>
+                            <tbody>
+                                 <% @products.each do |product| %>
+                                                        <tr>
+                                                            <td class="product-name"><%= product.name %></td>
+                                                            <td class="product-price"><span class="amount"><%= product.price %></span></td>
+                                                            <td class="product-quantity"><%= product.quantity %></td>
+                                                            <td class="product-remove"> <%= button_to 'x', remove_from_db_path(product), method: :delete %></td>
+                                                        </tr>
+                               <% end %>
+                         </tbody>
+                   </table>
+               </div>
+              <!-- Table Content End -->
+            </div>
+         <div class="upper-banner banner pb-60">
+      <div class="container">
+        <div class="row">
+          <!-- Single Banner Start -->
+          <div class="col-sm-6">
+            <div class="single-banner zoom">
+              <a href="#">
+                <%= image_tag "banner/pattern.png" %>
+              </a>
+            </div>
+          </div>
+          <!-- Single Banner End -->
+          <!-- Single Banner Start -->
+          <div class="col-sm-6">
+            <div class="single-banner zoom">
+              <a href="#">
+                <%= image_tag "banner/pattern.png" %>
+              </a>
+            </div>
+          </div>
+          <!-- Single Banner End -->
+        </div>
+        <!-- Row End -->
+      </div>
+      <!-- Container End -->
+    </div> 
+           <!-- Brand Logo Start -->
         <div class="brand-area pb-60">
             <div class="container">
                 <!-- Brand Banner Start -->
