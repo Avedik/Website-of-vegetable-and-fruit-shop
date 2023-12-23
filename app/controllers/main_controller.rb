@@ -16,9 +16,14 @@ class MainController < ApplicationController
   end
 
   def add_to_cart
+    @user = User.find(session[:user_id])
     id = params[:id].to_i
 
     session[:cart] << id unless session[:cart].include?(id)
+    if @user.order.nil?
+      @user.order = Order.create(user_id: @user.id, total_amount: 0, order_status: false)
+    end
+    @user.order.order_lines << Order_lines.create(product_id: id, quantity: 1, order_id: @user.order.id)
     # @order = Order.find(session[:order])
     # prod = Product.find(params[:id])
     # @order.products.create(name: prod.name, price: prod.price, quantity: 1) unless @order.products.any? { |p| p.name == params[:id].name }
@@ -35,7 +40,6 @@ class MainController < ApplicationController
   end
 
   def add_new_product
-   
     unless Product.where(name: params[:name]).count > 0
       Product.create(name: params[:name], price: params[:price], quantity: params[:quantity])
     end
@@ -80,6 +84,8 @@ class MainController < ApplicationController
 
   def initialize_session
     session[:cart] ||= []
+    @user = User.create
+    session[:user_id] = @user.id
     # @order = Order.create
     # session[:order] = @order.id
   end
