@@ -12,30 +12,23 @@ class MainController < ApplicationController
   end
 
   def shop
-    @products = Product.find_by(name: params[:product])
+    @products = Product.where(name: params[:product])
   end
 
   def add_to_cart
     @user = User.find(session[:user_id])
-    id = params[:id].to_i
-
-    session[:cart] << id unless session[:cart].include?(id)
-    if @user.order.nil?
-      @user.order = Order.create(user_id: @user.id, total_amount: 0, order_status: false)
-    end
-    @user.order.order_lines << Order_lines.create(product_id: id, quantity: 1, order_id: @user.order.id)
-    # @order = Order.find(session[:order])
-    # prod = Product.find(params[:id])
-    # @order.products.create(name: prod.name, price: prod.price, quantity: 1) unless @order.products.any? { |p| p.name == params[:id].name }
+    @user.order.order_lines.create(product_id: params[:id], quantity: 1)
     redirect_back(fallback_location: root_path)
   end
 
   def remove_from_cart
-    id = params[:id].to_i
-    session[:cart].delete(id)
-    # @order = Order.find(session[:order])
-    # id = params[:id].to_i
-    # @order.products.find(id).destroy
+    @user = User.find(session[:user_id])
+    @user.order.order_lines.where(product_id: params[:id]).delete_all
+    redirect_back(fallback_location: root_path)
+  end
+
+  def remove_all_from_cart
+    @user.order.order_lines.delete_all
     redirect_back(fallback_location: root_path)
   end
 
@@ -53,9 +46,15 @@ class MainController < ApplicationController
 
   def create
     OrderMailer.new_order_email.deliver_now
-    # Order.find(session[:order]).destroy
-    # session[:order] = nil
     redirect_to root_path
+  end
+
+  def count_cost
+    @cart.order_lines.each do |cart_item|
+      cart_item.quantity = params[cart_item.product_id.to_s]
+      cart_item.save
+    end
+    redirect_back(fallback_location: root_path)
   end
 
   def login; end
@@ -83,15 +82,18 @@ class MainController < ApplicationController
   private
 
   def initialize_session
-    session[:cart] ||= []
-    @user = User.create
-    session[:user_id] = @user.id
-    # @order = Order.create
-    # session[:order] = @order.id
+    unless User.where(login: request.remote_ip.to_s).count > 0
+      @user = User.create(login: request.remote_ip.to_s)
+      @user.order = Order.create(user_id: @user.id, total_amount: 0, order_status: false)
+      session[:user_id] = @user.id
+    else
+      session[:user_id] = User.where(login: request.remote_ip.to_s).first.id
+    end
   end
 
   def load_cart
-    @cart = Product.find(session[:cart])
-    # @order = Order.find(session[:order])
+    @products = Product.all # !!!!!!!!!!!!!!!!!!!!!!!!! for searching
+    @user = User.find_by(id: session[:user_id])
+    @cart = @user.order
   end
 end

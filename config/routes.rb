@@ -22,7 +22,9 @@ Rails.application.routes.draw do
   get "create", to: "main#create"
 
   post 'main/add_to_cart/:id', to: 'main#add_to_cart', as: 'add_to_cart'
-  delete 'main/remove_from_cart/:id', to: 'main#remove_from_cart', as: 'remove_from_cart'
+  post 'main/remove_from_cart/:id', to: 'main#remove_from_cart', as: 'remove_from_cart'
   post 'add_new_product', to: 'main#add_new_product'
   delete 'main/remove_from_db/:id', to: 'main#remove_from_db', as: 'remove_from_db'
+  post 'count_cost', to: 'main#count_cost'
+  get 'remove_all_from_cart', to: 'main#remove_all_from_cart'
 end
