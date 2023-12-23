@@ -12,7 +12,7 @@ class MainController < ApplicationController
   end
 
   def shop
-    @products = Product.where(name: params[:product])
+    @searching_products = Product.where(name: params[:product])
   end
 
   def add_to_cart
@@ -46,6 +46,7 @@ class MainController < ApplicationController
 
   def create
     OrderMailer.new_order_email.deliver_now
+    @user.order.order_lines.delete_all
     redirect_to root_path
   end
 

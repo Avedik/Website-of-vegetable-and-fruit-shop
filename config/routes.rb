@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   post "/shop.html", to: "main#shop"
   get "/wishlist.html", to: "main#wishlist"
   get "/forgot-password.html", to: "main#index"
-  get "create", to: "main#create"
+  post "create", to: "main#create"
 
   post 'main/add_to_cart/:id', to: 'main#add_to_cart', as: 'add_to_cart'
   post 'main/remove_from_cart/:id', to: 'main#remove_from_cart', as: 'remove_from_cart'

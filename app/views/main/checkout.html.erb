@@ -109,7 +109,6 @@
                                             <li><a href="shop.html">Магазин v</a>
                                               <!-- Home Version Dropdown Start -->
                                               <ul class="ht-dropdown dropdown-style-two">
-                                                <li><a href="product.html">Страница с информацией о продукте</a></li>
                                                 <li><a href="cart.html">Корзина</a></li>
                                                 <li><a href="checkout.html">Страница проверки</a></li>
                                               </ul>
@@ -150,59 +149,7 @@
                               </div>
                           </div>
                           <!-- Cartt Box End -->
-                          <div class="col-sm-12 d-lg-none">
-                              <div class="mobile-menu">
-                                  <nav>
-                                      <ul>
-
-                                          <li><a href="shop.html">сделать покупку</a>
-                                              <!-- Mobile Menu Dropdown Start -->
-                                              <ul>
-                                                  <li><a href="product.html">Магазин</a>
-                                                      <ul>
-                                                          <li><a href="shop.html">Название категории продуктов</a>
-                                                              <!-- Start Three Step -->
-                                                              <ul>
-                                                                  <li><a href="shop.html">Название категории продуктов</a></li>
-                                                                  <li><a href="shop.html">Название категории продуктов</a></li>
-                                                                  <li><a href="shop.html">Название категории продуктов</a></li>
-                                                              </ul>
-                                                          </li>
-                                                          <li><a href="shop.html">Название категории продуктов</a></li>
-                                                          <li><a href="shop.html">Название категории продуктов</a></li>
-                                                      </ul>
-                                                  </li>
-                                                  <li><a href="product.html">Страница с информацией о продукте</a></li>
-                                                  <li><a href="compare.html">Страница сравнения</a></li>
-                                                  <li><a href="cart.html">Корзина</a></li>
-                                                  <li><a href="checkout.html">Страница проверки</a></li>
-                                                  <li><a href="wishlist.html">Избранное</a></li>
-                                              </ul>
-                                              <!-- Mobile Menu Dropdown End -->
-                                          </li>
-                                          <li><a href="blog.html">Блог</a>
-                                              <!-- Mobile Menu Dropdown Start -->
-                                              <ul>
-                                                  <li><a href="blog-details.html">Страница с материалом блога</a></li>
-                                              </ul>
-                                              <!-- Mobile Menu Dropdown End -->
-                                          </li>
-                                          <li><a href="#">страницы</a>
-                                              <!-- Mobile Menu Dropdown Start -->
-                                              <ul>
-                                                  <li><a href="login.html">Войти</a></li>
-                                                  <li><a href="register.html">Зарегистрироваться</a></li>
-                                                  
-                                              </ul>
-                                              <!-- Mobile Menu Dropdown End -->
-                                          </li>
-                                          <li><a href="about.html">О нас</a></li>
-                                          <li><a href="contact.html">Связаться с нами</a></li>
-                                      </ul>
-                                  </nav>
-                              </div>
-                          </div>
-                          <!-- Mobile Menu  End -->                        
+                               
                       </div>
                       <!-- Row End -->
                   </div>
@@ -226,67 +173,10 @@
             <!-- Container End -->
         </div>
         <!-- Breadcrumb End -->
-        <!-- coupon-area start -->
-        <div class="coupon-area">
-            <div class="container">
-               <!-- Section Title Start -->
-                <div class="section-title mb-20">
-                    <h2>проверка</h2>
-                </div>
-                <!-- Section Title Start End -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="coupon-accordion">
-                            <!-- ACCORDION START -->
-                            <h3>Постоянный пользователь? <span id="showlogin">Нажмите для входа</span></h3>
-                            <div id="checkout-login" class="coupon-content">
-                                <div class="coupon-info">
-                                    <p class="coupon-text">Комментарий.</p>
-                                    <form action="#">
-                                        <p class="form-row-first">
-                                            <label>Имя пользователя или email<span class="required">*</span></label>
-                                            <input type="text" />
-                                        </p>
-                                        <p class="form-row-last">
-                                            <label>Пароль  <span class="required">*</span></label>
-                                            <input type="text" />
-                                        </p>
-                                        <p class="form-row">
-                                            <input type="submit" value="Login" />
-                                            <label>
-                                            <input type="checkbox" />
-                                             Напомнить 
-                                        </label>
-                                        </p>
-                                        <p class="lost-password">
-                                            <a href="#">Забыли пароль?</a>
-                                        </p>
-                                    </form>
-                                </div>
-                            </div>
-                            <!-- ACCORDION END -->
-                            <!-- ACCORDION START -->
-                            <h3>У вас есть купон? <span id="showcoupon">Нажмите здесь, чтобы ввести свой код</span></h3>
-                            <div id="checkout_coupon" class="coupon-checkout-content">
-                                <div class="coupon-info">
-                                    <form action="#">
-                                        <p class="checkout-coupon">
-                                            <input type="text" class="code" placeholder="Код купона" />
-                                            <input type="submit" value="Apply Coupon" />
-                                        </p>
-                                    </form>
-                                </div>
-                            </div>
-                            <!-- ACCORDION END -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- coupon-area end -->
         <!-- checkout-area start -->
         <div class="checkout-area pt-30  pb-60">
-            <div class="container">             
+            <div class="container">  
+              <%= form_tag('create') do -%>
                     <div class="row">
                         <div class="col-lg-6 col-md-6">
                             <div class="checkbox-form">
@@ -294,7 +184,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="country-select mb-30">
-                                            <label>Country <span class="required">*</span></label>
+                                            <label>Страна <span class="required">*</span></label>
                                             <select>
                                                 <option value="volvo">Россия</option>
                                                 <option value="saab">Армения</option>
@@ -303,13 +193,13 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="checkout-form-list">
-                                            <label>First Name <span class="required">*</span></label>
+                                            <label>Имя <span class="required">*</span></label>
                                             <input type="text" placeholder="" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="checkout-form-list mb-30">
-                                            <label>Last Name <span class="required">*</span></label>
+                                            <label>Фамилия <span class="required">*</span></label>
                                             <input type="text" placeholder="" />
                                         </div>
                                     </div>
@@ -332,7 +222,7 @@
                                     </div>
                                     <div class="col-md-12">
                                         <div class="checkout-form-list mb-30">
-                                            <label>Town / City <span class="required">*</span></label>
+                                            <label>Город (населённый пункт) <span class="required">*</span></label>
                                             <input type="text" placeholder="Город / населённый пункт" />
                                         </div>
                                     </div>
@@ -360,105 +250,6 @@
                                             <input type="text" placeholder="Почтовый индекс" />
                                         </div>
                                     </div>
-                                    <div class="col-md-12">
-                                        <div class="checkout-form-list create-acc mb-30">
-                                            <input id="cbox" type="checkbox" />
-                                            <label>Создать аккаунт?</label>
-
-
-                                        </div>
-                                        <div id="cbox_info" class="checkout-form-list create-accounts mb-25">
-                                            <p class="mb-10">Создайте учетную запись, введя информацию ниже. Если вы являетесь постоянным клиентом, пожалуйста, войдите в систему вверху страницы.</p>
-                                            <label>Пароль от аккаунта <span class="required">*</span></label>
-                                            <input type="password" placeholder="пароль" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="different-address">
-                                    <div class="ship-different-title">
-                                        <h3>
-                                            <label>Отправить по другому адресу?</label>
-                                            <input id="ship-box" type="checkbox" />
-                                        </h3>
-                                    </div>
-                                    <div id="ship-box-info">
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="country-select mb-30">
-                                                    <label>Страна <span class="required">*</span></label>
-                                                    <select>
-                                                        <option value="volvo">Россия</option>
-                                                        <option value="saab">Армения</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="checkout-form-list mb-30">
-                                                    <label>Имя <span class="required">*</span></label>
-                                                    <input type="text" placeholder="" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="checkout-form-list mb-30">
-                                                    <label>Фамилия <span class="required">*</span></label>
-                                                    <input type="text" placeholder="" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <div class="checkout-form-list mb-30">
-                                                    <label>Название региона</label>
-                                                    <input type="text" placeholder="" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <div class="checkout-form-list mb-30">
-                                                    <label>Адрес <span class="required">*</span></label>
-                                                    <input type="text" placeholder="Улица" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <div class="checkout-form-list mb-30">
-                                                    <input type="text" placeholder="Квартира (необязательно)" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <div class="checkout-form-list mb-30">
-                                                    <label>Город (населённый пункт) <span class="required">*</span></label>
-                                                    <input type="text" placeholder="Город / населённый пункт" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="checkout-form-list mb-30">
-                                                    <label>Область <span class="required">*</span></label>
-                                                    <input type="text" placeholder="" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="checkout-form-list mb-30">
-                                                    <label>Почтовый индекс <span class="required">*</span></label>
-                                                    <input type="text" placeholder="Почтовый индекс" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="checkout-form-list mb-30">
-                                                    <label>Email <span class="required">*</span></label>
-                                                    <input type="email" placeholder="" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="checkout-form-list mb-30">
-                                                    <label>Телефон <span class="required">*</span></label>
-                                                    <input type="text" placeholder="Почтовый индекс" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="order-notes">
-                                        <div class="checkout-form-list">
-                                            <label>Примечания к заказу</label>
-                                            <textarea id="checkout-mess" cols="30" rows="10" placeholder="Комментарий по вашему заказу."></textarea>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -470,37 +261,27 @@
                                         <thead>
                                             <tr>
                                                 <th class="product-name">Продукт</th>
-                                                <th class="product-total">Итого</th>
+                                                <th class="product-total">Цена за кг</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                         <% @cart.order_lines.each do |cart_item| %>
                                             <tr class="cart_item">
                                                 <td class="product-name">
-                                                    Название продукта<strong class="product-quantity"> × 1</strong>
+                                                    <%= @products.find(cart_item.product_id).name %><strong class="product-quantity"> × <%= cart_item.quantity %></strong>
                                                 </td>
                                                 <td class="product-total">
-                                                    <span class="amount">165.00 руб</span>
+                                                    <span class="amount"><%= @products.find(cart_item.product_id).price %> руб</span>
                                                 </td>
                                             </tr>
-                                            <tr class="cart_item">
-                                                <td class="product-name">
-                                                    Название продукта<strong class="product-quantity"> × 1</strong>
-                                                </td>
-                                                <td class="product-total">
-                                                    <span class="amount">50.00 руб</span>
-                                                </td>
-                                            </tr>
+                                          <% end %>
                                         </tbody>
                                         <tfoot>
-                                            <tr class="cart-subtotal">
-                                                <th>Промежуточный итог корзины</th>
-                                                <td><span class="amount">215.00 руб</span></td>
-
-
-                                            </tr>
                                             <tr class="order-total">
                                                 <th>Стоимость заказа</th>
-                                                <td><strong><span class="amount">215.00 руб</span></strong>
+                                                <td><strong><span class="amount"><% cost = 0; @cart.order_lines.each do |cart_item| %>
+                                                     <% cost = cost + @products.find(cart_item.product_id).price * cart_item.quantity %>                         <% end %>
+                                                            <%= cost %></span></strong>
                                                 </td>
                                             </tr>
                                         </tfoot>
@@ -553,13 +334,14 @@
                                             </div>
                                         </div>
                                         <div class="order-button-payment">
-                                            <a href="create">Заказать</a>
+                                            <input type="submit" value="Заказать" />
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                  <% end %>
             </div>
         </div>
         <!-- checkout-area end -->
