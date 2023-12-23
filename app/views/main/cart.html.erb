@@ -160,48 +160,24 @@
                            <div class="col-lg-3 col-sm-7 col-7">
                                <div class="cart-box text-right">
                                    <ul>
-                                       <li><a href="compare.html"><i class="fa fa-cog"></i></a>
-                                           <ul class="ht-dropdown">
-                                               <li><a href="login.html">Войти</a></li>
-                                               <li><a href="register.html">Зарегистрироваться</a></li>
-                                               <li><a href="account.html">Профиль</a></li>                                            
-                                           </ul>
-                                       </li>                                    
-                                       <li><a href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
-                                       <li><a href="#"><i class="fa fa-shopping-basket"></i><span class="cart-counter"><%= @cart.count %></span></a>
+                                       <li>Корзина <a href="#"><i class="fa fa-shopping-basket"></i><span class="cart-counter"><%= @cart.count %></span></a>
                                            <ul class="ht-dropdown main-cart-box">
                                                <li>
+                                               <% @cart.each do |cart_item| %>
                                                    <!-- Cart Box Start -->
                                                    <div class="single-cart-box">
-                                                       <div class="cart-img">
-                                                           <a href="#"><%= image_tag "menu/1.jpg" %></a>
-                                                       </div>
                                                        <div class="cart-content">
-                                                           <h6><a href="product.html">Названия продуктов</a></h6>
-                                                           <span>1 × 399.00 руб.</span>
+                                                           <h6><a href="product.html"><%= cart_item.name %></a></h6>
+                                                           <span><%= cart_item.price %> руб.</span>
                                                        </div>
-                                                       <a class="del-icone" href="#"><i class="fa fa-window-close-o"></i></a>
+                                                      <%= button_to 'x', remove_from_cart_path(cart_item), method: :delete %>
                                                    </div>
                                                    <!-- Cart Box End -->
-                                                   <!-- Cart Box Start -->
-                                                   <div class="single-cart-box">
-                                                       <div class="cart-img">
-                                                           <a href="#"><%= image_tag "menu/2.jpg" %></a>
-                                                       </div>
-                                                       <div class="cart-content">
-                                                           <h6><a href="product.html">Названия продуктов</a></h6>
-                                                           <span>2 × 299.00 руб.</span>
-                                                       </div>
-                                                       <a class="del-icone" href="#"><i class="fa fa-window-close-o"></i></a>
-                                                   </div>
-                                                   <!-- Cart Box End -->
-                                                   <!-- Cart Footer Inner Start -->
-                                                   <div class="cart-footer fix">
-                                                       <h5>Итого :<span class="f-right">698.00 руб.</span></h5>
+                                                  <% end %>
+                                                  <!-- Cart Footer Inner Start -->
                                                        <div class="cart-actions">
-                                                           <a class="checkout" href="checkout.html">Проверить</a>
+                                                           <a class="checkout" href="cart.html">В корзину</a>
                                                        </div>
-                                                   </div>
                                                    <!-- Cart Footer Inner End -->
                                                </li>
                                            </ul>
@@ -297,24 +273,18 @@
                                 <table>
                                     <thead>
                                         <tr>
-                                            <th class="product-thumbnail">Изображение</th>
                                             <th class="product-name">Продукт</th>
                                             <th class="product-price">Цена</th>
                                             <th class="product-quantity">Количеств</th>
-                                            <th class="product-subtotal">Итог</th>
                                             <th class="product-remove">Удалить</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                       <% @cart.each do |cart_item| %>
                                         <tr>
-                                            <td class="product-thumbnail">
-                                                <a href="#"><%= image_tag "products/1.jpg" %></a>
-                                            </td>
                                             <td class="product-name"><a href="#"><%= cart_item.name %></a></td>
                                             <td class="product-price"><span class="amount"><%= cart_item.price %></span></td>
-                                            <td class="product-quantity"><input type="number" value="1" /></td>
-                                            <td class="product-subtotal">165.00 руб</td>
+                                            <td class="product-quantity"><input type="number" /><%= cart_item.quantity %></td>
                                             <td class="product-remove"> <%= button_to 'x', remove_from_cart_path(cart_item), method: :delete %></td>
                                         </tr>
                                       <% end %>
@@ -323,14 +293,14 @@
                             </div>
                             <!-- Table Content End -->
                             <div class="row">
-                               <!-- Cart Button Start -->
-                                <div class="col-lg-8 col-md-7">
-                                    <div class="buttons-cart">
-                                        <input type="submit" value="Обновить корзину" />
-                                        <a href="#">Возвращайтесь</a>
-                                    </div>
-                                </div>
                                 <!-- Cart Button Start -->
+                                  <div class="col-lg-8 col-md-7">
+                                      <div class="buttons-cart">
+                                          <input type="submit" value="Обновить корзину" />
+                                          <a href="#">Рассчитать стоимость</a>
+                                      </div>
+                                  </div>
+                                  <!-- Cart Button Start -->
                                 <!-- Cart Totals Start -->
                                 <div class="col-lg-4 col-md-12">
                                     <div class="cart_totals">
@@ -340,13 +310,17 @@
                                             <tbody>
                                                 <tr class="cart-subtotal">
                                                     <th>Промежуточный итог</th>
-                                                    <td><span class="amount">215.00 руб</span></td>
+                                                    <td><span class="amount"><% res = 0; @cart.each do |cart_item| %>
+                <% res = res + cart_item.price * cart_item.quantity %>                         <% end %>
+                           <%= res %></span></td>
                                                 </tr>
                                                 <tr class="order-total">
                                                     <th>Стоимость</th>
                                                     <td>
-                                                        <strong><span class="amount">215.00 руб</span></strong>
-                                                    </td>
+                                                        <strong><span class="amount"><% cost = 0; @cart.each do |cart_item| %>
+                 <% cost = cost + cart_item.price * cart_item.quantity %>                         <% end %>
+                        <%= cost %></span></strong>
+                                                  </td>
                                                 </tr>
                                             </tbody>
                                         </table>

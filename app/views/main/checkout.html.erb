@@ -154,53 +154,29 @@
                               </div>
                           </div>
                           <!-- Search Box End -->
-                          <!-- Cartt Box Start -->
-                          <div class="col-lg-3 col-sm-7 col-7">
-                              <div class="cart-box text-right">
-                                  <ul>
-                                      <li><a href="compare.html"><i class="fa fa-cog"></i></a>
-                                          <ul class="ht-dropdown">
-                                              <li><a href="login.html">Войти</a></li>
-                                              <li><a href="register.html">Зарегистрироваться</a></li>
-                                              <li><a href="account.html">Профиль</a></li>                                            
-                                          </ul>
-                                      </li>                                    
-                                      <li><a href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
-                                      <li><a href="#"><i class="fa fa-shopping-basket"></i><span class="cart-counter"><%= @cart.count %></span></a>
-                                          <ul class="ht-dropdown main-cart-box">
-                                              <li>
-                                                  <!-- Cart Box Start -->
-                                                  <div class="single-cart-box">
-                                                      <div class="cart-img">
-                                                          <a href="#"><%= image_tag "menu/1.jpg" %></a>
-                                                      </div>
-                                                      <div class="cart-content">
-                                                          <h6><a href="product.html">Названия продуктов</a></h6>
-                                                          <span>1 × 399.00 руб.</span>
-                                                      </div>
-                                                      <a class="del-icone" href="#"><i class="fa fa-window-close-o"></i></a>
-                                                  </div>
-                                                  <!-- Cart Box End -->
-                                                  <!-- Cart Box Start -->
-                                                  <div class="single-cart-box">
-                                                      <div class="cart-img">
-                                                          <a href="#"><%= image_tag "menu/2.jpg" %></a>
-                                                      </div>
-                                                      <div class="cart-content">
-                                                          <h6><a href="product.html">Названия продуктов</a></h6>
-                                                          <span>2 × 299.00 руб.</span>
-                                                      </div>
-                                                      <a class="del-icone" href="#"><i class="fa fa-window-close-o"></i></a>
-                                                  </div>
-                                                  <!-- Cart Box End -->
-                                                  <!-- Cart Footer Inner Start -->
-                                                  <div class="cart-footer fix">
-                                                      <h5>Итого :<span class="f-right">698.00 руб.</span></h5>
-                                                      <div class="cart-actions">
-                                                          <a class="checkout" href="checkout.html">Проверить</a>
-                                                      </div>
-                                                  </div>
-                                                  <!-- Cart Footer Inner End -->
+                                                  <!-- Cartt Box Start -->
+                                                     <div class="col-lg-3 col-sm-7 col-7">
+                                                         <div class="cart-box text-right">
+                                                             <ul>
+                                                                 <li>Корзина <a href="#"><i class="fa fa-shopping-basket"></i><span class="cart-counter"><%= @cart.count %></span></a>
+                                                                     <ul class="ht-dropdown main-cart-box">
+                                                                         <li>
+                                                                         <% @cart.each do |cart_item| %>
+                                                                             <!-- Cart Box Start -->
+                                                                             <div class="single-cart-box">
+                                                                                 <div class="cart-content">
+                                                                                     <h6><a href="product.html"><%= cart_item.name %></a></h6>
+                                                                                     <span><%= cart_item.price %> руб.</span>
+                                                                                 </div>
+                                                                                     <%= button_to 'x', remove_from_cart_path(cart_item), method: :delete %></a>
+                                                                             </div>
+                                                                             <!-- Cart Box End -->
+                                                                            <% end %>
+                                                                            <!-- Cart Footer Inner Start -->
+                                                                                 <div class="cart-actions">
+                                                                                     <a class="checkout" href="cart.html">В корзину</a>
+                                                                                 </div>
+                                                                             <!-- Cart Footer Inner End -->
                                               </li>
                                           </ul>
                                       </li>

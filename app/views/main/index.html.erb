@@ -181,64 +181,36 @@
               </div>
             </div>
             <!-- Search Box End -->
-            <!-- Cartt Box Start -->
-            <div class="col-lg-3 col-sm-7 col-7">
-              <div class="cart-box text-right">
-                <ul>
-                  <li><a href="compare.html"><i class="fa fa-cog"></i></a>
-                    <ul class="ht-dropdown">
-                      <li><a href="login.html">Войти</a></li>
-                      <li><a href="register.html">Зарегистрироваться</a></li>
-                      <li><a href="account.html">Профиль</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
-                  <li><a href="#"><i class="fa fa-shopping-basket"></i><span class="cart-counter"><%= @cart.count %></span></a>
-                    <ul class="ht-dropdown main-cart-box">
-                      <li>
-                        <!-- Cart Box Start -->
-                        <div class="single-cart-box">
-                          <div class="cart-img">
-                            <a href="#">
-                              <%= image_tag "menu/1.jpg" %>
-                            </a>
-                          </div>
-                          <div class="cart-content">
-                            <h6><a href="product.html">Названия продуктов</a></h6>
-                            <span>1 × 399.00 руб.</span>
-                          </div>
-                          <a class="del-icone" href="#"><i class="fa fa-window-close-o"></i></a>
-                        </div>
-                        <!-- Cart Box End -->
-                        <!-- Cart Box Start -->
-                        <div class="single-cart-box">
-                          <div class="cart-img">
-                            <a href="#">
-                              <%= image_tag "menu/2.jpg" %>
-                            </a>
-                          </div>
-                          <div class="cart-content">
-                            <h6><a href="product.html">Названия продуктов</a></h6>
-                            <span>2 × 299.00 руб.</span>
-                          </div>
-                          <a class="del-icone" href="#"><i class="fa fa-window-close-o"></i></a>
-                        </div>
-                        <!-- Cart Box End -->
-                        <!-- Cart Footer Inner Start -->
-                        <div class="cart-footer fix">
-                          <h5>Итого :<span class="f-right">698.00 руб.</span></h5>
-                          <div class="cart-actions">
-                            <a class="checkout" href="checkout.html">Проверить</a>
-                          </div>
-                        </div>
-                        <!-- Cart Footer Inner End -->
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <!-- Cartt Box End -->
+                          <!-- Cartt Box Start -->
+                             <div class="col-lg-3 col-sm-7 col-7">
+                                 <div class="cart-box text-right">
+                                     <ul>
+                                         <li>Корзина <a href="#"><i class="fa fa-shopping-basket"></i><span class="cart-counter"><%= @cart.count %></span></a>
+                                             <ul class="ht-dropdown main-cart-box">
+                                                 <li>
+                                                 <% @cart.each do |cart_item| %>
+                                                     <!-- Cart Box Start -->
+                                                     <div class="single-cart-box">
+                                                         <div class="cart-content">
+                                                             <h6><a href="product.html"><%= cart_item.name %></a></h6>
+                                                             <span><%= cart_item.price %> руб.</span>
+                                                         </div>
+                                                        <%= button_to 'x', remove_from_cart_path(cart_item), method: :delete %>
+                                                     </div>
+                                                     <!-- Cart Box End -->
+                                                    <% end %>
+                                                    <!-- Cart Footer Inner Start -->
+                                                         <div class="cart-actions">
+                                                             <a class="checkout" href="cart.html">В корзину</a>
+                                                         </div>
+                                                     <!-- Cart Footer Inner End -->
+                                                 </li>
+                                             </ul>
+                                         </li>
+                                     </ul>
+                                 </div>
+                             </div>
+                             <!-- Cartt Box End -->
             <div class="col-sm-12 d-lg-none">
               <div class="mobile-menu">
                 <nav>
@@ -346,14 +318,14 @@
             <!-- Single Banner Start -->
             <div class="single-banner zoom mb-20">
               <a href="#">
-                <%= image_tag "banner/pattern.png" %>
+                <%= image_tag "banner/pattern_1.jpg" %>
               </a>
             </div>
             <!-- Single Banner End -->
             <!-- Single Banner Start -->
             <div class="single-banner zoom">
               <a href="#">
-                <%= image_tag "banner/pattern.png" %>
+                <%= image_tag "banner/pattern_2.jpg" %>
               </a>
             </div>
             <!-- Single Banner End -->
@@ -384,16 +356,14 @@
                 <i class="fa fa-star"></i>
               </div>
               <h4><a href="product.html"><%= product.name %></a></h4>
-              <p><span class="price">30.00 руб</span><del class="prev-price">32.00 руб</del></p>
+              <p><span class="price"><%= product.price %> руб</span><del class="prev-price"><%= product.price + 25 %> руб</del></p>
               <div class="pro-actions">
                 <div class="actions-secondary">
-                  <a href="wishlist.html" data-toggle="tooltip" title="Add to Wishlist"><i class="fa fa-heart"></i></a>
                       <% if @cart.include?(product) %>
                         <%= button_to 'Удалить из корзины', remove_from_cart_path(product), method: :delete %>
                       <% else %>
                         <%= button_to 'Добавить в корзину', add_to_cart_path(product), method: :post %>
                       <% end %>
-                  <a href="compare.html" data-toggle="tooltip" title="Add to Compare"><i class="fa fa-signal"></i></a>
                 </div>
               </div>
             </div>
@@ -483,7 +453,7 @@
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
                       </div>
-                      <h4><a href="product.html">Название продукта</a></h4>
+                      <h4><a href="product.html">Назвcание продукта</a></h4>
                       <p><span class="price">40.00 руб</span><del class="prev-price">72.00 руб</del></p>
                     </div>
                   </div>
@@ -1535,146 +1505,6 @@
  End -->
     </div>
     <!-- Best Product End -->
-    <!-- Blog Page Start -->
-    <div class="blog-area pb-60">
-      <div class="container">
-        <div class="group-title">
-          <h2>Из блога</h2>
-        </div>
-        <!-- Popular Categorie Activation Start -->
-        <div class="blog-active owl-carousel">
-          <!-- Single Blog Start -->
-          <div class="single-blog">
-            <div class="blog-img">
-              <a href="blog-details.html">
-                <%= image_tag "blog/1.jpg" %>
-              </a>
-            </div>
-            <div class="blog-content">
-              <h4 class="blog-title"><a href="blog-details.html">Мы всегда вас ждём</a></h4>
-              <div class="blog-meta">
-                <ul>
-                  <li><span>От: </span> <a href="#">Грядка,</a></li>
-                  <li><span>Дата: </span> <a href="#">30 Ноября, 2023</a></li>
-                </ul>
-              </div>
-              <div class="readmore">
-                <a href="blog-details.html">Читать больше.....</a>
-              </div>
-            </div>
-          </div>
-          <!-- Single Blog End -->
-          <!-- Single Blog Start -->
-          <div class="single-blog">
-            <div class="blog-img">
-              <a href="blog-details.html">
-                <%= image_tag "blog/2.jpg" %>
-              </a>
-            </div>
-            <div class="blog-content">
-              <h4 class="blog-title"><a href="blog-details.html">Мы всегда вас ждём</a></h4>
-              <div class="blog-meta">
-                <ul>
-                  <li><span>От </span> <a href="#">Грядка, </a></li>
-                  <li><span>Дата </span> <a href="#">30 Ноября, 2023</a></li>
-                </ul>
-              </div>
-              <div class="readmore">
-                <a href="blog-details.html">Читать больше.....</a>
-              </div>
-            </div>
-          </div>
-          <!-- Single Blog End -->
-          <!-- Single Blog Start -->
-          <div class="single-blog">
-            <div class="blog-img">
-              <a href="blog-details.html">
-                <%= image_tag "blog/3.jpg" %>
-              </a>
-            </div>
-            <div class="blog-content">
-              <h4 class="blog-title"><a href="blog-details.html">Мы всегда вас ждём</a></h4>
-              <div class="blog-meta">
-                <ul>
-                  <li><span>От </span> <a href="#">Грядка, </a></li>
-                  <li><span>Дата </span> <a href="#">30 Ноября, 2023</a></li>
-                </ul>
-              </div>
-              <div class="readmore">
-                <a href="blog-details.html">Читать больше.....</a>
-              </div>
-            </div>
-          </div>
-          <!-- Single Blog End -->
-          <!-- Single Blog Start -->
-          <div class="single-blog">
-            <div class="blog-img">
-              <a href="blog-details.html">
-                <%= image_tag "blog/1.jpg" %>
-              </a>
-            </div>
-            <div class="blog-content">
-              <h4 class="blog-title"><a href="blog-details.html">Мы всегда вас ждём</a></h4>
-              <div class="blog-meta">
-                <ul>
-                  <li><span>От </span> <a href="#">Грядка, </a></li>
-                  <li><span>Дата </span> <a href="#">30 Ноября, 2023</a></li>
-                </ul>
-              </div>
-              <div class="readmore">
-                <a href="blog-details.html">Читать больше.....</a>
-              </div>
-            </div>
-          </div>
-          <!-- Single Blog End -->
-          <!-- Single Blog Start -->
-          <div class="single-blog">
-            <div class="blog-img">
-              <a href="blog-details.html">
-                <%= image_tag "blog/2.jpg" %>
-              </a>
-            </div>
-            <div class="blog-content">
-              <h4 class="blog-title"><a href="blog-details.html">Мы всегда вас ждём</a></h4>
-              <div class="blog-meta">
-                <ul>
-                  <li><span>От </span> <a href="#">Грядка, </a></li>
-                  <li><span>Дата </span> <a href="#">30 Ноября, 2023</a></li>
-                </ul>
-              </div>
-              <div class="readmore">
-                <a href="blog-details.html">Читать больше.....</a>
-              </div>
-            </div>
-          </div>
-          <!-- Single Blog End -->
-          <!-- Single Blog Start -->
-          <div class="single-blog">
-            <div class="blog-img">
-              <a href="blog-details.html">
-                <%= image_tag "blog/3.jpg" %>
-              </a>
-            </div>
-            <div class="blog-content">
-              <h4 class="blog-title"><a href="blog-details.html">Читать больше</a></h4>
-              <div class="blog-meta">
-                <ul>
-                  <li><span>От </span> <a href="#">Грядка, </a></li>
-                  <li><span>Дата </span> <a href="#">30 Ноября, 2023</a></li>
-                </ul>
-              </div>
-              <div class="readmore">
-                <a href="blog-details.html">Читать больше.....</a>
-              </div>
-            </div>
-          </div>
-          <!-- Single Blog End -->
-        </div>
-        <!-- Popular Categorie Activation End -->
-      </div>
-      <!-- Container End -->
-    </div>
-    <!-- Blog Page End -->
     <!-- Brand Logo Start -->
     <div class="brand-area pb-60">
       <div class="container">

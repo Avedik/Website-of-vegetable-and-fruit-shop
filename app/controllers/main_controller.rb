@@ -1,9 +1,8 @@
 class MainController < ApplicationController
   before_action :initialize_session, only: [:index]
-  before_action :increment_visit_count
   before_action :load_cart
   skip_before_action :verify_authenticity_token
-  
+
   def index
     @products = Product.all
   end
@@ -13,24 +12,33 @@ class MainController < ApplicationController
   end
 
   def shop
-    @products = Product.where(name: params[:product])
+    @products = Product.find_by(name: params[:product])
   end
 
   def add_to_cart
     id = params[:id].to_i
+
     session[:cart] << id unless session[:cart].include?(id)
+    # @order = Order.find(session[:order])
+    # prod = Product.find(params[:id])
+    # @order.products.create(name: prod.name, price: prod.price, quantity: 1) unless @order.products.any? { |p| p.name == params[:id].name }
     redirect_back(fallback_location: root_path)
   end
 
   def remove_from_cart
     id = params[:id].to_i
     session[:cart].delete(id)
+    # @order = Order.find(session[:order])
+    # id = params[:id].to_i
+    # @order.products.find(id).destroy
     redirect_back(fallback_location: root_path)
   end
 
   def add_new_product
-    @products = Product.all
-    Product.create(name: params[:name], price: params[:price], quantity: params[:quantity]) unless @products.any? { |p| p.name == params[:name] }
+   
+    unless Product.where(name: params[:name]).count > 0
+      Product.create(name: params[:name], price: params[:price], quantity: params[:quantity])
+    end
     redirect_back(fallback_location: root_path)
   end
 
@@ -41,6 +49,8 @@ class MainController < ApplicationController
 
   def create
     OrderMailer.new_order_email.deliver_now
+    # Order.find(session[:order]).destroy
+    # session[:order] = nil
     redirect_to root_path
   end
 
@@ -69,16 +79,13 @@ class MainController < ApplicationController
   private
 
   def initialize_session
-    session[:visit_count] ||= 0 
-    session[:cart] ||= [] 
-  end
-
-  def increment_visit_count
-    session[:visit_count] += 1
-    @visit_count = session[:visit_count]
+    session[:cart] ||= []
+    # @order = Order.create
+    # session[:order] = @order.id
   end
 
   def load_cart
     @cart = Product.find(session[:cart])
+    # @order = Order.find(session[:order])
   end
 end
