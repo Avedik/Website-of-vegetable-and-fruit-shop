@@ -32,8 +32,6 @@ ActiveRecord::Schema.define(version: 2023_12_23_052544) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.decimal "price"
-    t.integer "quantity"
   end
 
   create_table "users", force: :cascade do |t|
