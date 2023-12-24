@@ -2,7 +2,6 @@
 //= link_directory ../stylesheets .css
 //= link_tree ../javascripts .js
 //= link meanmenu.min.css
-//= link_directory ../fonts .woff
 
 //= link animate.css
 //= link bootstrap.min.css
