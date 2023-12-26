@@ -81,15 +81,23 @@ class MainController < ApplicationController
   private
 
   def initialize_session
-    unless User.where(login: request.remote_ip.to_s).count > 0
-      @user = User.create(login: request.remote_ip.to_s)
+    unless User.where(login: request.remote_ip).count > 0
+      render plain: "USER ADDED"
+      @user = User.create(login: request.remote_ip)
       @user.order = Order.create(user_id: @user.id, total_amount: 0, order_status: false)
     end
+  string = "You IP address is #{client_ip}"
+
+  render plain: string
+  end
+
+  def client_ip
+    request.remote_ip
   end
 
   def load_cart
     @products = Product.all # !!!!!!!!!!!!!!!!!!!!!!!!! for searching
-    @user = User.where(login: request.remote_ip.to_s).first
+    @user = User.where(login: request.remote_ip).first
     @cart = @user.order
   end
 end
