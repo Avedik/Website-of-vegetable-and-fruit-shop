@@ -89,7 +89,7 @@ class MainController < ApplicationController
 
   def load_cart
     @products = Product.all # !!!!!!!!!!!!!!!!!!!!!!!!! for searching
-    @user = User.find_by(login: request.remote_ip.to_s)
+    @user = User.where(login: request.remote_ip.to_s).first
     @cart = @user.order
   end
 end
