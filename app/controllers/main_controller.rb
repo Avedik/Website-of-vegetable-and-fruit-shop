@@ -59,9 +59,7 @@ class MainController < ApplicationController
   def login; end
 
   def about
-    string = "You IP address is #{client_ip}"
-
-    render plain: string
+    
   end
 
   def account; end
@@ -92,13 +90,17 @@ class MainController < ApplicationController
   
   end
 
-  def client_ip
-    request.remote_ip
-  end
+  
 
   def load_cart
     @products = Product.all # !!!!!!!!!!!!!!!!!!!!!!!!! for searching
     @user = User.where(login: request.remote_ip).first
-    @cart = @user.order
+    string = "You IP address is #{client_ip} count #{User.where(login: request.remote_ip).count}"
+
+    render plain: string
+  end
+
+  def client_ip
+    request.remote_ip
   end
 end
