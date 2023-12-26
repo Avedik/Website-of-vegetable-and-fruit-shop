@@ -58,7 +58,11 @@ class MainController < ApplicationController
 
   def login; end
 
-  def about; end
+  def about
+    string = "You IP address is #{client_ip}"
+
+    render plain: string
+  end
 
   def account; end
 
@@ -86,9 +90,7 @@ class MainController < ApplicationController
       @user = User.create(login: request.remote_ip)
       @user.order = Order.create(user_id: @user.id, total_amount: 0, order_status: false)
     end
-  string = "You IP address is #{client_ip}"
-
-  render plain: string
+  
   end
 
   def client_ip
