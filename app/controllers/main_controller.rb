@@ -16,13 +16,11 @@ class MainController < ApplicationController
   end
 
   def add_to_cart
-    @user = User.find(session[:user_id])
     @user.order.order_lines.create(product_id: params[:id], quantity: 1)
     redirect_back(fallback_location: root_path)
   end
 
   def remove_from_cart
-    @user = User.find(session[:user_id])
     @user.order.order_lines.where(product_id: params[:id]).delete_all
     redirect_back(fallback_location: root_path)
   end
@@ -86,15 +84,12 @@ class MainController < ApplicationController
     unless User.where(login: request.remote_ip.to_s).count > 0
       @user = User.create(login: request.remote_ip.to_s)
       @user.order = Order.create(user_id: @user.id, total_amount: 0, order_status: false)
-      session[:user_id] = @user.id
-    else
-      session[:user_id] = User.where(login: request.remote_ip.to_s).first.id
     end
   end
 
   def load_cart
     @products = Product.all # !!!!!!!!!!!!!!!!!!!!!!!!! for searching
-    @user = User.find_by(id: session[:user_id])
+    @user = User.find_by(login: request.remote_ip.to_s)
     @cart = @user.order
   end
 end
