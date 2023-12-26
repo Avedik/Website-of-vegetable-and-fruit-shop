@@ -86,7 +86,6 @@ class MainController < ApplicationController
 
   def initialize_session
     unless User.where(login: request.remote_ip).count > 0
-      render plain: "USER ADDED"
       @user = User.create(login: request.remote_ip)
       @user.order = Order.create(user_id: @user.id, total_amount: 0, order_status: false)
     end
