@@ -16,6 +16,7 @@ class MainController < ApplicationController
   end
 
   def add_to_cart
+    @user = User.where(login: request.remote_ip).first
     @user.order.order_lines.create(product_id: params[:id], quantity: 1)
     redirect_back(fallback_location: root_path)
   end
@@ -58,9 +59,7 @@ class MainController < ApplicationController
 
   def login; end
 
-  def about
-    
-  end
+  def about; end
 
   def account; end
 
@@ -87,20 +86,11 @@ class MainController < ApplicationController
       @user = User.create(login: request.remote_ip)
       @user.order = Order.create(user_id: @user.id, total_amount: 0, order_status: false)
     end
-  
   end
-
-  
 
   def load_cart
     @products = Product.all # !!!!!!!!!!!!!!!!!!!!!!!!! for searching
     @user = User.where(login: request.remote_ip).first
-    string = "You IP address is #{client_ip} count #{User.where(login: request.remote_ip).count}"
-
-    render plain: string
-  end
-
-  def client_ip
-    request.remote_ip
+    @cart = User.where(login: request.remote_ip).first.order
   end
 end
